@@ -1,32 +1,32 @@
-# [LiveTerm - Make terminal styled websites in minutes!](https://liveterm.vercel.app)
+# [💻 LiveTerm - build terminal styled websites in minutes!](https://liveterm.vercel.app)
 
 Highly customizable, easy-to-use, and minimal terminal styled website template, powered by Next.js.
 
-To build a simple terminal styled website with LiveTerm, you only need to work with one file: `config.json`. After you filled out the config file, simply run `yarn install && yarn dev` to build your website!
+Building a simple website with LiveTerm only takes **minutes**, and you only need to work with **one** file: `config.json`. After you cloned this repository, simply run `yarn install && yarn dev` and start editing `config.json` to build your website!
 
-LiveTerm can be used to build a variety of websites: a personal website, a project page, a startpage, or just a cool browser music player...you name it!
+LiveTerm can be used to build a variety of websites:
 
-Source files for LiveTerm are all less than 150 lines of codes in length, with great emphasis towards readability and customizability.
+- a personal website
+- a project page
+- a startpage
+- or just a cool browser music player
+- ...you name it!
 
 Feel free to play with the web demo!
 
-## Showcase
+## 📸 Showcase
 
 <p align="center">
 <img src="./demo/demo.png" width="800"><br>
-<strong>Default LiveTerm</strong>
+<strong>default LiveTerm</strong>
 </p>
-
-Live version: https://liveterm.vercel.app
 
 <p align="center">
 <img src="./demo/cveinnt.png" width="800"><br>
 <strong>my personal website</strong>
 </p>
 
-Live version: https://cveinnt.com
-
-## Quick Start
+## 🚀 Ship your LiveTerm site in less than 5 minutes
 
 First, clone this repository:
 
@@ -46,23 +46,19 @@ Now you can start development!
 yarn dev
 ```
 
-Or, you can build the project:
+Start editing `config.json` and try saving and see the updated changes!
 
-```bash
-yarn build && yarn start
-```
-
-## Configuration
+## 📄 Configuration
 
 ### Basic Configuration
 
-Most of the configuration is done through the `config.json` file.
+90% of LiveTerm's configurations are done through the `config.json` file.
 
 ```javascript
 {
   "readmeUrl": // create a Github README and link it here!
   "title": // title of the website
-  "name": // returned by the command of the same name
+  "name": // your name, included in 'about' command
   "ascii": // ascii art to display
   "social": {
     "github": // your handle
@@ -71,7 +67,7 @@ Most of the configuration is done through the `config.json` file.
   "email": // your email
   "ps1_hostname": "liveterm" // hostname in prompt
   "ps1_username": "visitor", // username in prompt
-  "resume_url": "~/Resume.pdf", // path to your resume
+  "resume_url": "../resume.pdf", // path to your resume
   "non_terminal_url": "W",
   "colors": {
     "light": {
@@ -107,13 +103,15 @@ You may also want to change the output of `banner` command. To do that, simply p
 
 ### Advanced Configuration
 
-If you want to further customize your page, feel free to change the source code to your preference!
+If you want to further customize your page, feel free to change the source code to your liking!
 
-## Deploy on Vercel
+## 🌐 Deploy on Vercel
 
 The easiest way to deploy a Next.js app is to use the [Vercel Platform](https://vercel.com/) from the creators of Next.js.
 
-Check out [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+You can install `vercel` cli and follow the instruction [here](https://vercel.com/docs/concepts/deployments/overview).
+
+You can also connect your github account to vercel and have vercel automatically deploy the github repository for you.
 
 ## Credit
 
