@@ -9,7 +9,7 @@ const sumfetch = async (args: string[]): Promise<string> => {
     @@                           @@          ${config.name}
   @@                               @@       ﰩ ${config.ps1_hostname}
  @@                         @@@     @@       <u><a href="${config.resume_url}" target="_blank">resume</a></u>
-@@        @@@                        @@     爵 <u><a href="${config.non_terminal_url}" target="_blank">alt website</a></u>
+@@        @@@                        @@     爵 <u><a href="${config.repo}" target="_blank">Github repo</a></u>
 @@                                   @@     -----------
 @@             .@@@@@@@@@@.          @@      CONTACT 
  @@           @@          @@        @@       <u><a href="mailto:${config.email}" target="_blank">${config.email}</a></u>
@@ -28,7 +28,7 @@ const sumfetch = async (args: string[]): Promise<string> => {
       ▓▓▀  ▄▓▀   ▐▓▓  ▀▓▓    ▓▓▄             ABOUT
     ▄▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓            ${config.name}
    ▓▓     ▓▓▓    ▐▓▓    ▐▓▓     ▓▓           <u><a href="${config.resume_url}" target="_blank">resume</a></u>
-▐▓▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▓       爵 <u><a href="${config.non_terminal_url}" target="_blank">alt website</a></u>
+▐▓▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▓       爵 <u><a href="${config.repo}" target="_blank">Github repo</a></u>
 ▐▓                                 ▐▓       -----------
 ▐▓        > L I V E T E R M        ▐▓        CONTACT 
 ▐▓                                 ▐▓        <u><a href="mailto:${config.email}" target="_blank">${config.email}</a></u>

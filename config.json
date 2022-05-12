@@ -4,13 +4,13 @@
   "name": "John Doe",
   "ascii": "liveterm",
   "social": {
-    "github": "",
-    "linkedin": ""
+    "github": "github",
+    "linkedin": "linkedin"
   },
-  "email": "contact@johndoe.com",
+  "email": "contact@email.com",
   "ps1_hostname": "liveterm",
   "ps1_username": "visitor",
-  "non_terminal_url": "https://github.com/Cveinnt/LiveTerm",
+  "repo": "https://github.com/Cveinnt/LiveTerm",
   "resume_url": "https://upload.wikimedia.org/wikipedia/commons/c/cc/Resume.pdf",
   "donate_urls": {
     "paypal": "https://paypal.me/cveinnt",

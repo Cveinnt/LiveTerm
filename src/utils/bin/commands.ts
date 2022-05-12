@@ -19,14 +19,13 @@ export const help = async (args: string[]): Promise<string> => {
 [tab]: trigger completion.
 [ctrl+l]/clear: clear terminal.\n
 Type 'sumfetch' to display summary.
-Type 'gui' or click <u><a href="${config.non_terminal_url}" target="_blank">here</a></u> for a simpler version.
 `;
 };
 
 // Redirection
-export const gui = async (args: string[]): Promise<string> => {
-  window.open(`${config.non_terminal_url}`);
-  return 'Opening GUI version...';
+export const repo = async (args: string[]): Promise<string> => {
+  window.open(`${config.repo}`);
+  return 'Opening Github repository...';
 };
 
 // About
@@ -114,7 +113,7 @@ export const emacs = async (args?: string[]): Promise<string> => {
 };
 
 export const sudo = async (args?: string[]): Promise<string> => {
-  window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ', '_blank'); // good ol' rick roll
+  window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ', '_blank'); // ...I'm sorry
   return `Permission denied: with little power comes... no responsibility? `;
 };
 
@@ -129,8 +128,9 @@ export const banner = (args?: string[]): string => {
  ░███      █ ░███  ░░███ ███  ░███░░░      ░███    ░███░░░   ░███      ░███ ░███ ░███ 
  ███████████ █████  ░░█████   ░░██████     █████   ░░██████  █████     █████░███ █████
 ░░░░░░░░░░░ ░░░░░    ░░░░░     ░░░░░░     ░░░░░     ░░░░░░  ░░░░░     ░░░░░ ░░░ ░░░░░ 
+
 Type 'help' to see the list of available commands.
 Type 'sumfetch' to display summary.
-Type 'gui' or click <u><a class="text-light-blue dark:text-dark-blue underline" href="${config.non_terminal_url}" target="_blank">here</a></u> for a simpler version.
+Type 'repo' or click <u><a class="text-light-blue dark:text-dark-blue underline" href="${config.repo}" target="_blank">here</a></u> for the Github repository.
 `;
 };
