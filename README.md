@@ -40,7 +40,7 @@ Then, install dependencies:
 yarn install
 ```
 
-Now you can start development!
+Now you can start developing!
 
 ```bash
 yarn dev
