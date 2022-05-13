@@ -16,8 +16,8 @@ Feel free to play with the web demo above!
 ## 📸 Showcase
 
 <p align="center">
-<img src="./demo/demo.png" width="800"><br>
-<strong>default LiveTerm</strong>
+<img src="./demo/demo.gif" width="400"><br>
+<strong>LiveTerm with different themes</strong>
 </p>
 
 <p align="center">
@@ -92,11 +92,6 @@ Feel free to change it as you see fit!
 ### Themes
 
 You can find several pre-configured themes in `themes.json`, and you can replace the colors in `config.json` with the theme color you like! The themes are based on the themes on [this website](https://glitchbone.github.io/vscode-base16-term/#/).
-
-<p align="center">
-<img src="./demo/themes.png" width="800"><br>
-<strong>different LiveTerm themes</strong>
-</p>
 
 For a better preview of the themes, checkout the images in the `demo` folder.
 
