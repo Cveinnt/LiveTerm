@@ -27,25 +27,33 @@ Feel free to play with the web demo above!
 
 ## 🚀 Ship your LiveTerm site in less than 5 minutes
 
-First, clone this repository:
+LiveTerm requires the `yarn` package manager. You can install `yarn` [here](https://classic.yarnpkg.com/lang/en/docs/install/).
+
+Simply run the following commmand in your terminal:
 
 ```bash
-git clone https://github.com/Cveinnt/LiveTerm.git
+sh -c "$(curl -fsSL https://raw.github.com/Cveinnt/LiveTerm/main/install/install.sh)"
 ```
 
-Then, install dependencies:
+This will install LiveTerm to the current directory. You can start building your website with:
 
 ```bash
-yarn install
-```
-
-Now you can start developing!
-
-```bash
-yarn dev
+cd LiveTerm && yarn dev
 ```
 
 Start editing `config.json` and try saving and see the updated changes!
+
+Alternatively, you can clone this repository to a location of your choosing
+
+```bash
+git clone https://github.com/Cveinnt/LiveTerm.git && cd LiveTerm
+```
+
+Then install dependencies and start developing there:
+
+```bash
+yarn install && yarn dev
+```
 
 ## 📄 Configuration
 
