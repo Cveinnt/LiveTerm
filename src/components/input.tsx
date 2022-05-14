@@ -98,7 +98,7 @@ export const Input = ({
         autoFocus
         onKeyDown={onSubmit}
         autoComplete="off"
-        spellcheck="false"
+        spellCheck="false"
       />
     </div>
   );
