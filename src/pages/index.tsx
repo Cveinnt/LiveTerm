@@ -30,7 +30,8 @@ const IndexPage: React.FC<IndexPageProps> = ({ inputRef }) => {
 
   React.useEffect(() => {
     if (inputRef.current) {
-      inputRef.current.focus();
+      inputRef.current.scrollIntoView();
+      inputRef.current.focus({preventScroll: true});
     }
   }, [history]);
 
