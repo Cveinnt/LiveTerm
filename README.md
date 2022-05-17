@@ -16,13 +16,13 @@ Feel free to play with the web demo above!
 ## 📸 Showcase
 
 <p align="center">
-<img src="./demo/demo.gif" width="400"><br>
+<img src="./demo/demo.gif" width="600"><br>
 <strong>LiveTerm with different themes</strong>
 </p>
 
 <p align="center">
-<img src="./demo/cveinnt.png" width="800"><br>
-<strong>my personal website</strong>
+<img src="./demo/cveinnt.png" width="600"><br>
+<strong><a href="https://cveinnt.com" target=_blank>my personal website</strong>
 </p>
 
 ## 🚀 Ship your LiveTerm site in less than 5 minutes
@@ -56,15 +56,15 @@ yarn install && yarn dev
 ```
 
 ### Docker Usage
-- Clone the project.
-- Edit `config.json`.
-- Run the following to start the service (from within the project dir):
-````shell
-docker-compose up -d
-````
 
-You can also try changing `Dockerfile` & `docker-compose.yml` ONLY IF YOU KNOW WHAT YOU ARE DOING!
-Learn about Docker [here](https://docs.docker.com/get-started/overview/ "here").
+First, clone the project and edit `config.json` to your liking. Then run the following to start the container in the background:
+
+```shell
+docker-compose up -d
+```
+
+If you **know** what you were doing, you can also try changing `Dockerfile` & `docker-compose.yml`!
+Learn more about Docker [here](https://docs.docker.com/get-started/overview/ 'here').
 
 ## 📄 Configuration
 
