@@ -55,6 +55,17 @@ Then install dependencies and start developing there:
 yarn install && yarn dev
 ```
 
+### Docker Usage
+- Clone the project.
+- Edit `config.json`.
+- Run the following to start the service (from within the project dir):
+````shell
+docker-compose up -d
+````
+
+You can also try changing `Dockerfile` & `docker-compose.yml` ONLY IF YOU KNOW WHAT YOU ARE DOING!
+Learn about Docker [here](https://docs.docker.com/get-started/overview/ "here").
+
 ## 📄 Configuration
 
 ### Basic Configuration
