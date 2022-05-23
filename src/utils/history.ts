@@ -4,9 +4,9 @@ let historyIndex = 0;
 
 export function list(): string {
   const array: Array<string> = [];
-  for (const key in history) {
-    const value: string = history[key];
-    array.push(`${key}:  ${value}`);
+  for (const index in history) {
+    const value: string = history[index];
+    array.push(`${index}:  ${value}`);
   }
 
   return array.join('\n');
