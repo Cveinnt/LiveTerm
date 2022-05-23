@@ -3,10 +3,14 @@ const history: History = {};
 let historyIndex = 0;
 
 export function list(): string {
+  const maximumNumberOfDigits = historyIndex.toString().length;
+
   const array: Array<string> = [];
   for (const index in history) {
-    const value: string = history[index];
-    array.push(`${index}:  ${value}`);
+    const value = history[index];
+    const paddedIndex = index.toString().padStart(maximumNumberOfDigits, ' ');
+
+    array.push(`${paddedIndex}:  ${value}`);
   }
 
   return array.join('\n');
