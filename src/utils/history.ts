@@ -1,4 +1,4 @@
-type History = Record<string, string>;
+type History = Record<number, string>;
 const history: History = {};
 let historyIndex = 0;
 
@@ -28,14 +28,15 @@ export function getCommandIfHistoryExpansion(input): string {
     if (index === '!') {
       command = getLast();
     } else {
-      command = get(index);
+      // parseInt here is guaranteed to succeed I suppose.
+      command = get(parseInt(index));
     }
   }
 
   return command;
 }
 
-function get(index: string): string {
+function get(index: number): string {
   return history[index];
 }
 
