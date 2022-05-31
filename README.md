@@ -29,7 +29,7 @@ Feel free to play with the web demo above!
 
 LiveTerm requires the `yarn` package manager. You can install `yarn` [here](https://classic.yarnpkg.com/lang/en/docs/install/).
 
-Simply run the following commmand in your terminal:
+Simply run the following command in your terminal:
 
 ```bash
 sh -c "$(curl -fsSL https://raw.github.com/Cveinnt/LiveTerm/main/install/install.sh)"
