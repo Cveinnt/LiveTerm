@@ -28,3 +28,10 @@ export const getQuote = async () => {
     quote: `“${data.content}” — ${data.author}`,
   };
 };
+
+export const getPostsDevTo = async () => {
+  const { data } = await axios.get(
+    `https://dev.to/api/articles?username=${config.social.devToUsername}`,
+  );
+  return data;
+};
