@@ -3,6 +3,10 @@
 import * as bin from './index';
 import config from '../../../config.json';
 
+function urla(herf: String, text: String): String {
+  return `<u><a class="text-light-blue dark:text-dark-blue underline" href="${herf}" target="_blank">${text}</a></u>`
+}
+
 // Help
 export const help = async (args: string[]): Promise<string> => {
   const commands = Object.keys(bin).sort().join(', ');
@@ -44,6 +48,7 @@ export const resume = async (args: string[]): Promise<string> => {
 };
 
 // Donate
+/*
 export const donate = async (args: string[]): Promise<string> => {
   return `thank you for your interest. 
 here are the ways you can support my work:
@@ -51,6 +56,7 @@ here are the ways you can support my work:
 - <u><a class="text-light-blue dark:text-dark-blue underline" href="${config.donate_urls.patreon}" target="_blank">patreon</a></u>
 `;
 };
+*/
 
 // Contact
 export const email = async (args: string[]): Promise<string> => {
@@ -64,11 +70,14 @@ export const github = async (args: string[]): Promise<string> => {
   return 'Opening github...';
 };
 
+
+/*
 export const linkedin = async (args: string[]): Promise<string> => {
   window.open(`https://www.linkedin.com/in/${config.social.linkedin}/`);
 
   return 'Opening linkedin...';
 };
+*/
 
 // Search
 export const google = async (args: string[]): Promise<string> => {
@@ -138,6 +147,10 @@ export const sudo = async (args?: string[]): Promise<string> => {
   return `Permission denied: with little power comes... no responsibility? `;
 };
 
+export const url = async (args?: string[]): Promise<String> => {
+  return `Alist: ${urla("https://alist.archlinux.tech", "alist.archlinux.tech")}\nMy blog: ${urla("https://blog.archlinux.tech", "blog.archlinux.tech")}`;
+}
+
 // Banner
 export const banner = (args?: string[]): string => {
   return `
@@ -153,5 +166,7 @@ export const banner = (args?: string[]): string => {
 Type 'help' to see the list of available commands.
 Type 'sumfetch' to display summary.
 Type 'repo' or click <u><a class="text-light-blue dark:text-dark-blue underline" href="${config.repo}" target="_blank">here</a></u> for the Github repository.
+Type 'url' to see how do I use this domain.
 `;
 };
+
