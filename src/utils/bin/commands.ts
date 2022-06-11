@@ -91,6 +91,11 @@ export const reddit = async (args: string[]): Promise<string> => {
   return `Searching reddit for ${args.join(' ')}...`;
 };
 
+export const stackoverflow = async (args: string[]): Promise<string> => {
+  window.open(`https://stackoverflow.com/search?q=${args.join(' ')}`);
+  return `Searching stack overflow for ${args.join(' ')}...`;
+};
+
 // Typical linux commands
 export const echo = async (args: string[]): Promise<string> => {
   return args.join(' ');
