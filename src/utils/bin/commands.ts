@@ -138,6 +138,11 @@ export const emacs = async (args?: string[]): Promise<string> => {
   return `you know what? just use vscode.`;
 };
 
+export const vscode = async (args?: string[]): Promise<string> => {
+  window.open(`vscode://`);
+  return `opening god's favorite editor...`;
+};
+
 export const sudo = async (args?: string[]): Promise<string> => {
   window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ', '_blank'); // ...I'm sorry
   return `Permission denied: with little power comes... no responsibility? `;
