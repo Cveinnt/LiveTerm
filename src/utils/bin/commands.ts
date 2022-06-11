@@ -91,6 +91,11 @@ export const reddit = async (args: string[]): Promise<string> => {
   return `Searching reddit for ${args.join(' ')}...`;
 };
 
+export const stackoverflow = async (args: string[]): Promise<string> => {
+  window.open(`https://stackoverflow.com/search?q=${args.join(' ')}`);
+  return `Searching stack overflow for ${args.join(' ')}...`;
+};
+
 // Typical linux commands
 export const echo = async (args: string[]): Promise<string> => {
   return args.join(' ');
@@ -131,6 +136,11 @@ export const nvim = async (args: string[]): Promise<string> => {
 
 export const emacs = async (args?: string[]): Promise<string> => {
   return `you know what? just use vscode.`;
+};
+
+export const vscode = async (args?: string[]): Promise<string> => {
+  window.open(`vscode://`);
+  return `opening god's favorite editor...`;
 };
 
 export const sudo = async (args?: string[]): Promise<string> => {
