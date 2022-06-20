@@ -2,16 +2,21 @@
 
 import * as bin from './index';
 import config from '../../../config.json';
+import { commandExclude } from '../commandExclude';
 
 // Help
 export const help = async (args: string[]): Promise<string> => {
   const commands = Object.keys(bin).sort().join(', ');
   var c = '';
+  var included_count = 1;
   for (let i = 1; i <= Object.keys(bin).sort().length; i++) {
-    if (i % 7 === 0) {
-      c += Object.keys(bin).sort()[i - 1] + '\n';
-    } else {
-      c += Object.keys(bin).sort()[i - 1] + ' ';
+    if (!(commandExclude(Object.keys(bin).sort()[i-1]))){
+      if (included_count % 7 === 0) {
+        c += Object.keys(bin).sort()[i - 1] + '\n';
+      } else {
+        c += Object.keys(bin).sort()[i - 1] + ' ';
+      }
+      included_count++;
     }
   }
   return `Welcome! Here are all the available commands:

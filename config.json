@@ -16,6 +16,8 @@
     "paypal": "https://paypal.me/cveinnt",
     "patreon": "https://patreon.com/cveinnt"
   },
+  "excluded_commands": [
+  ],
   "colors": {
     "light": {
       "background": "#FBF1C9",
