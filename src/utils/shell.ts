@@ -1,5 +1,6 @@
 import React from 'react';
 import * as bin from './bin';
+import { commandExclude } from '../utils/commandExclude';
 
 export const shell = async (
   command: string,
@@ -14,7 +15,7 @@ export const shell = async (
     clearHistory();
   } else if (command === '') {
     setHistory('');
-  } else if (Object.keys(bin).indexOf(args[0]) === -1) {
+  } else if (Object.keys(bin).indexOf(args[0]) === -1 || commandExclude(args[0])) {
     setHistory(
       `shell: command not found: ${args[0]}. Try 'help' to get started.`,
     );

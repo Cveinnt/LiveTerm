@@ -3,6 +3,7 @@ import { commandExists } from '../utils/commandExists';
 import { shell } from '../utils/shell';
 import { handleTabCompletion } from '../utils/tabCompletion';
 import { Ps1 } from './Ps1';
+import { commandExclude } from '../utils/commandExclude';
 
 export const Input = ({
   inputRef,
@@ -89,7 +90,7 @@ export const Input = ({
         id="prompt"
         type="text"
         className={`bg-light-background dark:bg-dark-background focus:outline-none flex-grow ${
-          commandExists(command) || command === ''
+          (commandExists(command) || command === '') && !commandExclude(command)
             ? 'text-dark-green'
             : 'text-dark-red'
         }`}

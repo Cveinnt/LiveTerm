@@ -82,6 +82,11 @@ Learn more about Docker [here](https://docs.docker.com/get-started/overview/ 'he
     "github": // your handle
     "linkedin": // your handle
   },
+  "excluded_commands": [
+    // list of commands you would like to exclude
+    "command_1",
+    "command_n"
+  ],
   "email": // your email
   "ps1_hostname": "liveterm" // hostname in prompt
   "ps1_username": "visitor", // username in prompt
