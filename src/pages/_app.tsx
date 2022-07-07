@@ -1,13 +1,44 @@
 import React from 'react';
 import '../styles/global.css';
 import Head from 'next/head';
-
+import config from '../../config.json';
+import { useLayoutEffect, useState } from 'react';
 const App = ({ Component, pageProps }) => {
   const inputRef = React.useRef<HTMLInputElement>(null);
 
   const onClickAnywhere = () => {
     inputRef.current.focus();
   };
+
+  useLayoutEffect(() => {
+    let html = document.querySelector('html');
+    html.classList.add('dark');
+    let theme = window.sessionStorage.getItem('theme');
+    if (theme == 'dark') {
+      html.classList.add('dark');
+    } else if (theme == 'light') {
+      html.classList.remove('dark');
+    }
+  }, []);
+
+  React.useEffect(() => {
+    const askName = 'What is your name?';
+    let visitor: string;
+
+    if (!window.sessionStorage) {
+      window.prompt(askName);
+    }
+
+    visitor = window.sessionStorage.getItem('visitorName');
+
+    if (!visitor) {
+      visitor = window.prompt(askName);
+      if (['', undefined, null].includes(visitor)) {
+        visitor = config.ps1_username;
+      }
+      window.sessionStorage.setItem('visitorName', visitor);
+    }
+  }, []);
 
   return (
     <>
