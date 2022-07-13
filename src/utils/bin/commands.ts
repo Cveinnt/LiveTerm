@@ -52,6 +52,22 @@ here are the ways you can support my work:
 `;
 };
 
+// theme
+export const theme = async (args: string[]): Promise<string> => {
+  let html = document.querySelector('html');
+  if (`${args}` == 'dark') {
+    window.sessionStorage.setItem('theme', 'dark');
+    html.classList.add('dark');
+    return `changing theme to dark ...`;
+  } else if (`${args}` == 'light') {
+    window.sessionStorage.setItem('theme', 'light');
+    html.classList.remove('dark');
+    return `changing theme to light ..`;
+  } else {
+    return `available options are dark and light.`;
+  }
+};
+
 // Contact
 export const email = async (args: string[]): Promise<string> => {
   window.open(`mailto:${config.email}`);
@@ -97,7 +113,8 @@ export const echo = async (args: string[]): Promise<string> => {
 };
 
 export const whoami = async (args: string[]): Promise<string> => {
-  return `${config.ps1_username}`;
+  let visitor = window.sessionStorage.getItem('visitorName');
+  return `${visitor}`;
 };
 
 export const ls = async (args: string[]): Promise<string> => {
