@@ -28,4 +28,6 @@ const sumfetch = async (args: string[]): Promise<string> => {
 
 `;
 
+};
+
 export default sumfetch;
