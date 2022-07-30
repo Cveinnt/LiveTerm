@@ -1,20 +1,19 @@
 {
   "readmeUrl": "https://raw.githubusercontent.com/cveinnt/cveinnt/master/README.md",
-  "title": "LiveTerm",
-  "name": "John Doe",
-  "ascii": "liveterm",
+  "title": "Are you really reading this title?",
+  "name": "Faiyaz Rahman",
+  "ascii": "f41yaz",
   "social": {
-    "github": "github",
-    "linkedin": "linkedin"
+    "github": "viscory",
+    "linkedin": "faiyazr"
   },
-  "email": "contact@email.com",
-  "ps1_hostname": "liveterm",
-  "ps1_username": "visitor",
-  "repo": "https://github.com/Cveinnt/LiveTerm",
-  "resume_url": "https://upload.wikimedia.org/wikipedia/commons/c/cc/Resume.pdf",
+  "email": "faiyaz_r@outlook.com",
+  "ps1_hostname": "here",
+  "ps1_username": "guest",
+  "repo": "https://github.com/viscory/viscory.github.io",
+  "resume_url": "http://docs.google.com/document/d/12UwAGKPOlG3jmRZr2tO2BVqtX4pYZhmm6TAyGBRDEBQ/export?format=pdf",
   "donate_urls": {
-    "paypal": "https://paypal.me/cveinnt",
-    "patreon": "https://patreon.com/cveinnt"
+    "wallet": "0x2BA1c436eF129966b6268a63E0f905f2D4FF09bd"
   },
   "colors": {
     "light": {
