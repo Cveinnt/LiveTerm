@@ -139,7 +139,7 @@ export const sudo = async (args?: string[]): Promise<string> => {
 
 export const doas = async (args?: string[]): Promise<string> => {
   window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ', '_blank'); // ...I'm sorry
-  return `Permission denied: with little power comes... no responsibility?, at least you aren't bloated `;
+  return `Permission denied: with little power comes... no responsibility? kudos on fighting bloat. `;
 };
 
 export const env = async (args?: string[]): Promise<string> => {
@@ -157,17 +157,17 @@ export const reboot = async (args?: string[]): Promise<string> => {
 // Banner
 export const banner = (args?: string[]): string => {
   return `
-█████        ███                       ███████████                                   
-░░███        ░░░                       ░█░░░███░░░█                                   
- ░███        ████  █████ █████  ██████ ░   ░███  ░   ██████  ████████  █████████████  
- ░███       ░░███ ░░███ ░░███  ███░░███    ░███     ███░░███░░███░░███░░███░░███░░███ 
- ░███        ░███  ░███  ░███ ░███████     ░███    ░███████  ░███ ░░░  ░███ ░███ ░███ 
- ░███      █ ░███  ░░███ ███  ░███░░░      ░███    ░███░░░   ░███      ░███ ░███ ░███ 
- ███████████ █████  ░░█████   ░░██████     █████   ░░██████  █████     █████░███ █████
-░░░░░░░░░░░ ░░░░░    ░░░░░     ░░░░░░     ░░░░░     ░░░░░░  ░░░░░     ░░░░░ ░░░ ░░░░░ 
+ ██      ██                      ██   ██                             ██
+░██     ░██          ██   ██    ░██  ░██                            ░██
+░██     ░██  █████  ░░██ ██    ██████░██       █████  ██████  █████ ░██
+░██████████ ██░░░██  ░░███    ░░░██░ ░██████  ██░░░██░░██░░█ ██░░░██░██
+░██░░░░░░██░███████   ░██       ░██  ░██░░░██░███████ ░██ ░ ░███████░██
+░██     ░██░██░░░░    ██        ░██  ░██  ░██░██░░░░  ░██   ░██░░░░ ░░
+░██     ░██░░██████  ██         ░░██ ░██  ░██░░██████░███   ░░██████ ██
+░░      ░░  ░░░░░░  ░░           ░░  ░░   ░░  ░░░░░░ ░░░     ░░░░░░ ░░
 
-Type 'help' to see the list of available commands.
-Type 'sumfetch' to display summary.
+Type 'sumfetch' to see a short summary, 'resume' or 'linkedin' or 'projects' for more specific information.
 Type 'repo' or click <u><a class="text-light-blue dark:text-dark-blue underline" href="${config.repo}" target="_blank">here</a></u> for the Github repository.
+Type 'help' to see the list of available commands.
 `;
 };
