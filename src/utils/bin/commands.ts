@@ -76,7 +76,7 @@ export const google = async (args: string[]): Promise<string> => {
 };
 
 export const duckduckgo = async (args: string[]): Promise<string> => {
-  window.open(`https://duckduckgo.com/?q=${args.join(' ')}`);
+  window.open(`https://duckduckgo.com/?q=${args.join(' ')} `);
   return `Searching duckduckgo for ${args.join(' ')}...`;
 };
 
@@ -121,7 +121,7 @@ export const vi = async (args: string[]): Promise<string> => {
 };
 
 export const vim = async (args: string[]): Promise<string> => {
-  return `'vim' is so outdated. how about 'nvim'?`;
+  return `'vim' is vintage. but i've heard 'nvim' is cool.`;
 };
 
 export const nvim = async (args: string[]): Promise<string> => {
@@ -135,6 +135,23 @@ export const emacs = async (args?: string[]): Promise<string> => {
 export const sudo = async (args?: string[]): Promise<string> => {
   window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ', '_blank'); // ...I'm sorry
   return `Permission denied: with little power comes... no responsibility? `;
+};
+
+export const sudo = async (args?: string[]): Promise<string> => {
+  window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ', '_blank'); // ...I'm sorry
+  return `Permission denied: with little power comes... no responsibility?, at least you aren't bloated `;
+};
+
+export const env = async (args?: string[]): Promise<string> => {
+  return `whatcha looking for over here`;
+};
+
+export const shutdown = async (args?: string[]): Promise<string> => {
+  return `nice try, try reboot instead`;
+};
+
+export const reboot = async (args?: string[]): Promise<string> => {
+  return `why do you hate me`;
 };
 
 // Banner
