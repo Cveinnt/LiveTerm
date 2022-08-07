@@ -148,7 +148,7 @@ export const banner = (args?: string[]): string => {
  ░███        ░███  ░███  ░███ ░███████     ░███    ░███████  ░███ ░░░  ░███ ░███ ░███ 
  ░███      █ ░███  ░░███ ███  ░███░░░      ░███    ░███░░░   ░███      ░███ ░███ ░███ 
  ███████████ █████  ░░█████   ░░██████     █████   ░░██████  █████     █████░███ █████
-░░░░░░░░░░░ ░░░░░    ░░░░░     ░░░░░░     ░░░░░     ░░░░░░  ░░░░░     ░░░░░ ░░░ ░░░░░    <u><a class="text-light-blue dark:text-dark-blue underline" href="by Cveinnt" target="https://github.com/Cveinnt/LiveTerm"</a></u>
+░░░░░░░░░░░ ░░░░░    ░░░░░     ░░░░░░     ░░░░░     ░░░░░░  ░░░░░     ░░░░░ ░░░ ░░░░░   <u><a class="text-light-blue dark:text-dark-blue underline" href="https://github.com/Cveinnt/LiveTerm" target="_blank">by Cveinnt</a></u>
 
 Type 'help' to see the list of available commands.
 Type 'sumfetch' to display summary.
