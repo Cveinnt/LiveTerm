@@ -34,7 +34,7 @@ export const Input = ({
 
     if (event.key === 'Tab') {
       event.preventDefault();
-      handleTabCompletion(command, setCommand);
+      handleTabCompletion(command, setHistory, setCommand);
     }
 
     if (event.key === 'Enter' || event.code === '13') {
