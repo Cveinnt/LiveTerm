@@ -1,21 +1,22 @@
 {
-  "readmeUrl": "https://raw.githubusercontent.com/cveinnt/cveinnt/master/README.md",
-  "title": "LiveTerm",
-  "name": "John Doe",
-  "ascii": "liveterm",
+  "readmeUrl": "https://raw.githubusercontent.com/lwpie/lwpie/master/README.md",
+  "title": "Yipeng's Index",
+  "name": "Yipeng Liu",
+  "ascii": "Yipe.ng",
   "social": {
-    "github": "github",
-    "linkedin": "linkedin"
+    "github": "lwpie",
+    "phone": "15::24652"
   },
-  "email": "contact@email.com",
-  "ps1_hostname": "liveterm",
-  "ps1_username": "visitor",
-  "repo": "https://github.com/Cveinnt/LiveTerm",
-  "resume_url": "https://upload.wikimedia.org/wikipedia/commons/c/cc/Resume.pdf",
+  "email": "liu@yipe.ng",
+  "ps1_hostname": "yipe.ng",
+  "ps1_username": "pwe",
+  "repo": "https://github.com/lwpie/LiveTerm",
+  "resume_url": "/cv",
   "donate_urls": {
-    "paypal": "https://paypal.me/cveinnt",
-    "patreon": "https://patreon.com/cveinnt"
+    "paypal": "KFC-CRAZY-THURSDAY",
+    "patreon": "VME50-THANKS"
   },
+  "fake": "https://youtu.be/dQw4w9WgXcQ",
   "colors": {
     "light": {
       "background": "#FBF1C9",
