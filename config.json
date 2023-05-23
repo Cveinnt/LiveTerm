@@ -18,7 +18,7 @@
   },
   "fake": "https://youtu.be/dQw4w9WgXcQ",
   "colors": {
-    "light": {
+    "dark": {
       "background": "#FBF1C9",
       "foreground": "#3C3836",
       "yellow": "#D79921",
@@ -27,7 +27,7 @@
       "blue": "#458588",
       "red": "#CA2124"
     },
-    "dark": {
+    "light": {
       "background": "#2E3440",
       "foreground": "#E5E9F0",
       "yellow": "#5E81AC",
