@@ -12,6 +12,10 @@
   font-family: 'Hack', monospace;
 }
 
+a {
+  text-decoration-line: underline;
+}
+
 html,
 body,
 body > div:first-child,
