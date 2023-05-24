@@ -33,9 +33,10 @@ export const about = async (args: string[]): Promise<string> => {
   return `Hi, I am ${config.name}. 
 Welcome to my terminal!
 More about me:
+'readme' - my github readme.
 'sumfetch' - short summary.
 'resume' - my latest resume.
-'readme' - my github readme.`;
+`;
 };
 
 export const resume = async (args: string[]): Promise<string> => {
@@ -160,8 +161,9 @@ export const banner = (args?: string[]): string => {
                      █████                           ░░██████ 
                     ░░░░░                             ░░░░░░  
 
-Type 'help' to see the list of available commands.
+Type 'readme' to display my github readme.
 Type 'sumfetch' to display summary.
-Type 'repo' or click <u><a class="text-light-blue dark:text-dark-blue underline" href="${config.repo}" target="_blank">here</a></u> for the Github repository.
+Type 'help' to see the list of available commands.
 `;
+// Type 'repo' or click <u><a class="text-light-blue dark:text-dark-blue underline" href="${config.repo}" target="_blank">here</a></u> for the Github repository.
 };
