@@ -1,7 +1,4 @@
 #!/bin/sh
-# This script installs LiveTerm.
-#
-# Found a bug? Report it here: https://github.com/Cveinnt/LiveTerm/issues
 
 set -e -u
 
@@ -14,34 +11,18 @@ echo "LiveTerm cloned! Installing dependencies..."
 if command -v yarn >/dev/null 2>&1 ; then
   yarn install
 else
-  cat 1>&2 << 'EOA'
-/=====================================\\
-|       COMMAND NOT FOUND: 'yarn'      |
-\\=====================================/
+  cat 1>&2 << 'EOA'   
 
 Uh oh! We couldn't find 'yarn' installed on your system.
 
 You should first install 'yarn' on your system. 
 
-For more information, visit yarn's installation page:
-
-  https://classic.yarnpkg.com/lang/en/docs/install/
 
 EOA
   exit 1
 fi
 
 cat <<-'EOM'
-
-
- █████        ███                       ███████████                                   
-░░███        ░░░                       ░█░░░███░░░█                                   
- ░███        ████  █████ █████  ██████ ░   ░███  ░   ██████  ████████  █████████████  
- ░███       ░░███ ░░███ ░░███  ███░░███    ░███     ███░░███░░███░░███░░███░░███░░███ 
- ░███        ░███  ░███  ░███ ░███████     ░███    ░███████  ░███ ░░░  ░███ ░███ ░███ 
- ░███      █ ░███  ░░███ ███  ░███░░░      ░███    ░███░░░   ░███      ░███ ░███ ░███ 
- ███████████ █████  ░░█████   ░░██████     █████   ░░██████  █████     █████░███ █████
-░░░░░░░░░░░ ░░░░░    ░░░░░     ░░░░░░     ░░░░░     ░░░░░░  ░░░░░     ░░░░░ ░░░ ░░░░░ 
                                                                                 
 
 LiveTerm has been downloaded to the current directory.
