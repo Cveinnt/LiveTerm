@@ -1,20 +1,20 @@
 {
-  "readmeUrl": "https://raw.githubusercontent.com/cveinnt/cveinnt/master/README.md",
-  "title": "LiveTerm",
-  "name": "John Doe",
+  "readmeUrl": "https://raw.githubusercontent.com/G1A1B1E/G1A1B1E/master/README.md",
+  "title": "Gabe Macri",
+  "name": "Gabe Macri",
   "ascii": "liveterm",
   "social": {
-    "github": "github",
+    "github": "G1A1B1E",
     "linkedin": "linkedin"
   },
-  "email": "contact@email.com",
-  "ps1_hostname": "liveterm",
-  "ps1_username": "visitor",
-  "repo": "https://github.com/Cveinnt/LiveTerm",
-  "resume_url": "https://upload.wikimedia.org/wikipedia/commons/c/cc/Resume.pdf",
+  "email": "gabemacru@gmail.com",
+  "ps1_hostname": "root",
+  "ps1_username": "kali",
+  "repo": "https://github.com/G1A1B1E/LiveTerm",
+  "resume_url": "#",
   "donate_urls": {
-    "paypal": "https://paypal.me/cveinnt",
-    "patreon": "https://patreon.com/cveinnt"
+    "paypal": "https://paypal.me/",
+    "patreon": "https://patreon.com/"
   },
   "colors": {
     "light": {
