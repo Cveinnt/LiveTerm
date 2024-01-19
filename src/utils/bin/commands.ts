@@ -144,6 +144,18 @@ export const vscode = async (args: string[]): Promise<string> => {
   return 'Opening Vscode...';
 };
 
+export const su = async (args: string[]): Promise<string> => {
+  return `nope! try sudo?`;
+};
+
+export const git = async (args: string[]): Promise<string> => {
+  return `naw you cant clone here`;
+};
+
+export const ver = async (args: string[]): Promise<string> => {
+  window.open(`${config.version}`);
+};
+
 // Banner
 export const banner = (args?: string[]): string => {
   return `
