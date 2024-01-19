@@ -153,7 +153,7 @@ export const git = async (args: string[]): Promise<string> => {
 };
 
 export const ver = async (args: string[]): Promise<string> => {
-  window.open(`${config.version}`);
+  return `${config.version}`;
 };
 
 // Banner
