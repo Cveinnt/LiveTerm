@@ -8,8 +8,8 @@
     "linkedin": "linkedin"
   },
   "email": "gabemacru@gmail.com",
-  "ps1_hostname": "root",
-  "ps1_username": "kali",
+  "ps1_hostname": "kali",
+  "ps1_username": "root",
   "repo": "https://github.com/G1A1B1E/LiveTerm",
   "resume_url": "#",
   "donate_urls": {
@@ -27,13 +27,13 @@
       "red": "#CA2124"
     },
     "dark": {
-      "background": "#2E3440",
-      "foreground": "#E5E9F0",
-      "yellow": "#5E81AC",
-      "green": "#A3BE8C",
-      "gray": "#88C0D0",
-      "blue": "#EBCB8B",
-      "red": "#BF616A"
+      "background": "#1c1c1c",
+      "foreground": "#EBDBB2",
+      "yellow": "#D79921",
+      "green": "#98971A",
+      "gray": "#A89984",
+      "blue": "#458588",
+      "red": "#CA2124"
     }
   }
 }
