@@ -160,13 +160,7 @@ export const ver = async (args: string[]): Promise<string> => {
 export const banner = (args?: string[]): string => {
   return `
 
- _______  ____   _______  ____   _______  ____   _______ 
- |       ||    | |   _   ||    | |  _    ||    | |       |
- |    ___| |   | |  |_|  | |   | | |_|   | |   | |    ___|
- |   | __  |   | |       | |   | |       | |   | |   |___ 
- |   ||  | |   | |       | |   | |  _   |  |   | |    ___|
- |   |_| | |   | |   _   | |   | | |_|   | |   | |   |___ 
- |_______| |___| |__| |__| |___| |_______| |___| |_______|
+Type "Help" for a List of avalible commands 
  
 `;
 };
