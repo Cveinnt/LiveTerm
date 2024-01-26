@@ -156,6 +156,10 @@ export const ver = async (args: string[]): Promise<string> => {
   return `${config.version}`;
 };
 
+export const jump = async (args: string[]): Promise<string> => {
+  return `${config.jump}`;
+};
+
 // Banner
 export const banner = (args?: string[]): string => {
   return `
