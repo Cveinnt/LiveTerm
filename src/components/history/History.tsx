@@ -16,7 +16,6 @@ export const History: React.FC<{ history: Array<HistoryInterface> }> = ({
 
             <div className="flex-grow">{entry.command}</div>
           </div>
-
           <p
             className="whitespace-pre-wrap mb-2"
             style={{ lineHeight: 'normal' }}
