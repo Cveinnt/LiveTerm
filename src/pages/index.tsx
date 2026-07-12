@@ -7,7 +7,7 @@ import { History } from '../components/history/History';
 import { banner } from '../utils/bin/commands';
 
 interface IndexPageProps {
-  inputRef: React.MutableRefObject<HTMLInputElement>;
+  inputRef: React.RefObject<HTMLInputElement>;
 }
 
 const IndexPage: React.FC<IndexPageProps> = ({ inputRef }) => {
@@ -18,6 +18,7 @@ const IndexPage: React.FC<IndexPageProps> = ({ inputRef }) => {
     lastCommandIndex,
     setCommand,
     setHistory,
+    updateHistory,
     clearHistory,
     setLastCommandIndex,
   } = useHistory([]);
@@ -53,6 +54,7 @@ const IndexPage: React.FC<IndexPageProps> = ({ inputRef }) => {
             lastCommandIndex={lastCommandIndex}
             setCommand={setCommand}
             setHistory={setHistory}
+            updateHistory={updateHistory}
             setLastCommandIndex={setLastCommandIndex}
             clearHistory={clearHistory}
           />

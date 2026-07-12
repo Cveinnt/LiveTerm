@@ -11,15 +11,19 @@ export const useHistory = (defaultValue: Array<History>) => {
     command,
     lastCommandIndex,
     setHistory: (value: string) =>
-      setHistory([
-        ...history,
+      setHistory((prev) => [
+        ...prev,
         {
-          id: history.length,
+          id: prev.length,
           date: new Date(),
           command,
           output: value,
         },
       ]),
+    updateHistory: (index: number, value: string) =>
+      setHistory((prev) =>
+        prev.map((entry, i) => (i === index ? { ...entry, output: value } : entry)),
+      ),
     setCommand,
     setLastCommandIndex,
     clearHistory: () => setHistory([]),
