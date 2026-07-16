@@ -159,4 +159,25 @@
       "red": "#EF6155"
     }
   }
+  ,
+  "matrix_crt": {
+    "light": {
+      "background": "#EAFBEA",
+      "foreground": "#103410",
+      "yellow": "#6B8E23",
+      "green": "#0A8F3B",
+      "gray": "#3A5F3A",
+      "blue": "#0E8D7A",
+      "red": "#B23A3A"
+    },
+    "dark": {
+      "background": "#0A0F0A",
+      "foreground": "#D2FFD2",
+      "yellow": "#9ACD32",
+      "green": "#00FF88",
+      "gray": "#2E3D2E",
+      "blue": "#00D4AA",
+      "red": "#FF3B3B"
+    }
+  }
 }

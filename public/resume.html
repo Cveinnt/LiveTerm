@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mihir Talati – Resume</title>
+  <style>
+    :root {
+      --content-max-width: 960px;
+      --primary-text: #d9ffe2;
+      --secondary-text: rgba(182, 255, 210, 0.75);
+      --accent: #9acd32;
+      --card-bg: rgba(4, 30, 16, 0.82);
+      --card-border: rgba(98, 255, 164, 0.35);
+      --page-bg: radial-gradient(circle at top, rgba(10, 40, 22, 0.85) 0%, rgba(1, 12, 5, 1) 55%);
+      --tag-bg: rgba(82, 255, 160, 0.12);
+      --tag-border: rgba(146, 255, 197, 0.45);
+      --filter-border: rgba(146, 255, 197, 0.35);
+      --filter-focus: rgba(154, 205, 50, 0.45);
+      --glass-highlight: rgba(146, 255, 197, 0.06);
+    }
+
+    @keyframes scanline {
+      0% { transform: translateY(-100%); }
+      100% { transform: translateY(100%); }
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'IBM Plex Mono', 'Fira Code', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+      background: #010805;
+      background-image: var(--page-bg);
+      color: var(--primary-text);
+      line-height: 1.65;
+      letter-spacing: 0.01em;
+      text-shadow: 0 0 6px rgba(146, 255, 197, 0.18);
+      position: relative;
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background: linear-gradient(
+        rgba(255, 255, 255, 0.04) 0%,
+        rgba(0, 0, 0, 0) 50%,
+        rgba(255, 255, 255, 0.04) 100%
+      );
+      background-size: 100% 3px;
+      opacity: 0.25;
+      mix-blend-mode: overlay;
+    }
+
+    body::after {
+      content: '';
+      position: fixed;
+      left: 0;
+      right: 0;
+      top: -100%;
+      height: 120%;
+      pointer-events: none;
+      background: linear-gradient(
+        to bottom,
+        rgba(154, 205, 50, 0) 0%,
+        rgba(154, 205, 50, 0.12) 50%,
+        rgba(154, 205, 50, 0) 100%
+      );
+      animation: scanline 6s linear infinite;
+      opacity: 0.25;
+    }
+
+    .container {
+      max-width: var(--content-max-width);
+      margin: 0 auto;
+      padding: 64px 32px 96px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.6rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #eafff5;
+    }
+
+    header p {
+      margin: 12px 0 0;
+      color: var(--secondary-text);
+      font-size: 1.05rem;
+    }
+
+    section + section {
+      margin-top: 56px;
+    }
+
+    .section-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 20px;
+    }
+
+    .card {
+      position: relative;
+      border-radius: 20px;
+      padding: 32px 36px;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      box-shadow:
+        0 0 0 1px rgba(154, 205, 50, 0.18),
+        0 24px 48px rgba(10, 60, 30, 0.45);
+      backdrop-filter: blur(6px) saturate(120%);
+    }
+
+    .card::after {
+      content: '';
+      position: absolute;
+      inset: 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(146, 255, 197, 0.08);
+      pointer-events: none;
+    }
+
+    .card + .card {
+      margin-top: 28px;
+    }
+
+    .card-header {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 16px;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .card-title {
+      margin: 0;
+      font-size: 1.2rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      color: #e5ffe9;
+    }
+
+    .card-subtitle {
+      margin: 0;
+      font-weight: 500;
+      color: var(--secondary-text);
+    }
+
+    .card-meta {
+      text-align: right;
+      color: var(--secondary-text);
+      font-size: 0.95rem;
+    }
+
+    .meta-line {
+      display: block;
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 0 0 20px;
+      padding: 0;
+      list-style: none;
+      position: relative;
+      z-index: 1;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      padding: 5px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--tag-border);
+      background: var(--tag-bg);
+      color: #9df5ba;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      box-shadow: inset 0 0 12px rgba(146, 255, 197, 0.12);
+    }
+
+    ul.bullet-list {
+      margin: 0;
+      padding-left: 22px;
+      position: relative;
+      z-index: 1;
+    }
+
+    ul.bullet-list li {
+      margin-bottom: 12px;
+      color: var(--primary-text);
+    }
+
+    ul.bullet-list li:last-child {
+      margin-bottom: 0;
+    }
+
+    .education-grid {
+      display: grid;
+      gap: 32px;
+    }
+
+    .scholarships {
+      margin-top: 20px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(146, 255, 197, 0.24);
+    }
+
+    .scholarships-title {
+      font-weight: 600;
+      margin: 0 0 10px;
+      color: rgba(182, 255, 210, 0.85);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 0.75rem;
+    }
+
+    .courses-card {
+      background: linear-gradient(160deg, rgba(8, 40, 18, 0.9) 0%, rgba(2, 16, 8, 0.92) 65%, rgba(4, 24, 12, 0.96) 100%);
+      border-radius: 24px;
+      padding: 36px;
+      border: 1px solid rgba(146, 255, 197, 0.4);
+      box-shadow: 0 30px 60px rgba(6, 40, 18, 0.5);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .courses-card::before {
+      content: '';
+      position: absolute;
+      inset: -60px 20% 40%;
+      background: radial-gradient(circle, rgba(146, 255, 197, 0.28) 0%, rgba(146, 255, 197, 0) 65%);
+      opacity: 0.65;
+      pointer-events: none;
+    }
+
+    .filter-label {
+      display: block;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      color: rgba(182, 255, 210, 0.78);
+      margin-bottom: 8px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .filter-input {
+      width: 100%;
+      padding: 14px 18px;
+      border-radius: 12px;
+      border: 1px solid var(--filter-border);
+      font-size: 1rem;
+      background: rgba(2, 18, 9, 0.92);
+      color: var(--primary-text);
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+      text-shadow: inherit;
+      position: relative;
+      z-index: 1;
+    }
+
+    .filter-input::placeholder {
+      color: rgba(182, 255, 210, 0.45);
+    }
+
+    .filter-input:focus {
+      outline: none;
+      border-color: var(--filter-focus);
+      box-shadow: 0 0 0 4px rgba(154, 205, 50, 0.18);
+    }
+
+    .courses-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 14px;
+      margin-top: 26px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .course-pill {
+      background: rgba(6, 28, 14, 0.9);
+      border-radius: 16px;
+      padding: 12px 16px;
+      border: 1px solid rgba(146, 255, 197, 0.4);
+      font-weight: 500;
+      color: var(--primary-text);
+      box-shadow:
+        inset 0 0 12px rgba(146, 255, 197, 0.08),
+        0 16px 32px rgba(6, 40, 18, 0.45);
+      transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+    }
+
+    .course-pill:hover {
+      transform: translateY(-2px);
+      border-color: rgba(154, 205, 50, 0.65);
+      box-shadow:
+        inset 0 0 14px rgba(146, 255, 197, 0.12),
+        0 18px 36px rgba(10, 60, 30, 0.55);
+    }
+
+    .course-pill.hidden {
+      display: none;
+    }
+
+    .empty-state {
+      display: none;
+      margin-top: 24px;
+      padding: 18px;
+      border-radius: 14px;
+      background: rgba(4, 20, 10, 0.75);
+      border: 1px dashed rgba(146, 255, 197, 0.5);
+      color: rgba(212, 255, 225, 0.82);
+      text-align: center;
+      font-weight: 500;
+      position: relative;
+      z-index: 1;
+    }
+
+    a {
+      color: var(--accent);
+    }
+
+    @media (max-width: 720px) {
+      header h1 {
+        font-size: 2.1rem;
+      }
+
+      .card {
+        padding: 26px;
+      }
+
+      .card-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .card-meta {
+        text-align: left;
+      }
+
+      .courses-grid {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Mihir Talati</h1>
+      <p>Dual Degree · B.S. Computer Science (Honors) & B.S. Physics (Honors) · GPA 3.974</p>
+    </header>
+
+    <section id="education">
+      <h2 class="section-title">Education</h2>
+      <div class="education-grid">
+        <article class="card">
+          <div class="card-header">
+            <div>
+              <h3 class="card-title">University of Maryland – College Park</h3>
+              <p class="card-subtitle">Computer Science (Honors) · Physics (Honors)</p>
+            </div>
+            <div class="card-meta">
+              <span class="meta-line">Expected Graduation · May 2027</span>
+              <span class="meta-line">Dean’s List · Every Semester</span>
+            </div>
+          </div>
+          <div class="scholarships">
+            <p class="scholarships-title">Scholarships & Distinctions</p>
+            <ul class="bullet-list">
+              <li>Angelo Bardasis Scholarship (Physics)</li>
+              <li>John D. Gannon Scholarship (Computer Science)</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="work">
+      <h2 class="section-title">Work Experience</h2>
+
+      <article class="card">
+        <div class="card-header">
+          <div>
+            <h3 class="card-title">Researcher · CAAR REU</h3>
+            <p class="card-subtitle">Combinatorics, Algorithms, and AI for Real Problems</p>
+          </div>
+          <div class="card-meta">
+            <span class="meta-line">Jun 2025 – Aug 2025</span>
+            <span class="meta-line">QuICS · University of Maryland</span>
+          </div>
+        </div>
+        <ul class="tag-list">
+          <li class="tag">Python</li>
+          <li class="tag">Galois</li>
+          <li class="tag">NumPy</li>
+          <li class="tag">Magma Math</li>
+          <li class="tag">SageMath</li>
+        </ul>
+        <ul class="bullet-list">
+          <li>Designed novel fault-tolerant CSS quantum error-correcting codes for qudits inspired by quadratic residue codes.</li>
+          <li>Established code families with transversal Clifford and T gate support through finite field and QEC theory proofs.</li>
+          <li>Implemented parallel Python tooling to validate self-orthogonality and distance properties across large search spaces.</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <div class="card-header">
+          <div>
+            <h3 class="card-title">Undergraduate Researcher · Bright Beams Collective</h3>
+            <p class="card-subtitle">IREAP Research Experience for Undergraduates</p>
+          </div>
+          <div class="card-meta">
+            <span class="meta-line">Sep 2023 – Dec 2024</span>
+            <span class="meta-line">Institute for Research in Electronics and Applied Physics</span>
+          </div>
+        </div>
+        <ul class="tag-list">
+          <li class="tag">MAD-X</li>
+          <li class="tag">Elegant</li>
+          <li class="tag">Fusion 360</li>
+          <li class="tag">MATLAB</li>
+          <li class="tag">Ansys Workbench</li>
+        </ul>
+        <ul class="bullet-list">
+          <li>Built custom machine learning and gradient-based optimizers to derive design parameters for a planned beamline.</li>
+          <li>Ran accelerator simulations to analyze lattice stability and beam quality under varied operating configurations.</li>
+          <li>Produced animations of betatron motion for outreach presentations and technical discussions.</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <div class="card-header">
+          <div>
+            <h3 class="card-title">Software Engineering Intern · JODO PAY</h3>
+            <p class="card-subtitle">Invoicing System Automation</p>
+          </div>
+          <div class="card-meta">
+            <span class="meta-line">Jun 2022 – Jul 2022</span>
+          </div>
+        </div>
+        <ul class="tag-list">
+          <li class="tag">JavaScript</li>
+          <li class="tag">TypeScript</li>
+          <li class="tag">Google Apps Script</li>
+        </ul>
+        <ul class="bullet-list">
+          <li>Automated invoice generation and dispatch for clients, reducing manual processing by 40 staff hours each week.</li>
+          <li>Integrated Google Workspace APIs to manage templates, customer data, and error handling workflows.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section id="projects">
+      <h2 class="section-title">Projects</h2>
+
+      <article class="card">
+        <div class="card-header">
+          <div>
+            <h3 class="card-title">Quantum State Tomography via QML</h3>
+            <p class="card-subtitle">GitHub · github.com/Mihir-Null</p>
+          </div>
+          <div class="card-meta">
+            <span class="meta-line">Sep 2024 – Jul 2025</span>
+          </div>
+        </div>
+        <ul class="tag-list">
+          <li class="tag">Python</li>
+          <li class="tag">Qiskit</li>
+          <li class="tag">Aer</li>
+          <li class="tag">MPI</li>
+          <li class="tag">Numba</li>
+          <li class="tag">PyTorch</li>
+        </ul>
+        <ul class="bullet-list">
+          <li>Co-developed a variational circuit tomography approach, exploring loss landscapes, embedding strategies, and optimizers.</li>
+          <li>Executed 2,000+ experiments across multi-GPU clusters with a custom orchestrator for reproducible benchmarking.</li>
+          <li>Co-authored <em>Quantum state reconstruction with variational quantum circuit</em> (arXiv:2507.01246).</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <div class="card-header">
+          <div>
+            <h3 class="card-title">MIT iQuHack · QuEra Challenge</h3>
+            <p class="card-subtitle">Honorable Mention</p>
+          </div>
+          <div class="card-meta">
+            <span class="meta-line">Feb 2025</span>
+          </div>
+        </div>
+        <ul class="tag-list">
+          <li class="tag">Python</li>
+          <li class="tag">Qiskit</li>
+          <li class="tag">Cirq</li>
+          <li class="tag">Bloqade</li>
+          <li class="tag">PyTorch</li>
+          <li class="tag">TensorFlow Quantum</li>
+        </ul>
+        <ul class="bullet-list">
+          <li>Designed a compilation pipeline mapping diverse quantum circuits—including QAOA and Steane codes—to QuEra hardware.</li>
+          <li>Optimized pulse sequences for neutral atom instruction sets, contributing to the team’s honorable mention finish.</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <div class="card-header">
+          <div>
+            <h3 class="card-title">Quantum Machine Learning Research</h3>
+            <p class="card-subtitle">Undergraduate Research Portfolio</p>
+          </div>
+          <div class="card-meta">
+            <span class="meta-line">Aug 2023 – Dec 2024</span>
+          </div>
+        </div>
+        <ul class="tag-list">
+          <li class="tag">Python</li>
+          <li class="tag">Qiskit</li>
+          <li class="tag">Cirq</li>
+          <li class="tag">PennyLane</li>
+          <li class="tag">Q#</li>
+        </ul>
+        <ul class="bullet-list">
+          <li>Implemented quantum image processing with parameterized circuit kernels integrated into CNN architectures.</li>
+          <li>Created a hybrid transitional optimizer to mitigate barren plateaus in QAOA, presented at the FYIRE Summit 2024.</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <div class="card-header">
+          <div>
+            <h3 class="card-title">Terrapin Rocket Team · Kalman Filters</h3>
+            <p class="card-subtitle">Guidance, Navigation, and Control</p>
+          </div>
+          <div class="card-meta">
+            <span class="meta-line">Aug 2023 – Jan 2024</span>
+          </div>
+        </div>
+        <ul class="tag-list">
+          <li class="tag">C</li>
+          <li class="tag">C++</li>
+          <li class="tag">MATLAB</li>
+        </ul>
+        <ul class="bullet-list">
+          <li>Developed six- and nine-state Kalman filters fusing multi-sensor telemetry for rocket position estimation.</li>
+          <li>Supported the team’s winning entry at the 2024 Spaceport America Cup.</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <div class="card-header">
+          <div>
+            <h3 class="card-title">Robotics @ UMD · Computer Vision</h3>
+            <p class="card-subtitle">Testudog Automation</p>
+          </div>
+          <div class="card-meta">
+            <span class="meta-line">Aug 2023 – Jan 2024</span>
+          </div>
+        </div>
+        <ul class="tag-list">
+          <li class="tag">Python</li>
+          <li class="tag">OpenCV</li>
+          <li class="tag">scikit-learn</li>
+        </ul>
+        <ul class="bullet-list">
+          <li>Developed Haar cascade pipelines for the Testudog robotics platform deployed on a Jetson-powered Boston Dynamics Spot.</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <div class="card-header">
+          <div>
+            <h3 class="card-title">Club Administration Automation</h3>
+            <p class="card-subtitle">Workflow Automation Suite</p>
+          </div>
+          <div class="card-meta">
+            <span class="meta-line">Nov 2024 – Feb 2025</span>
+          </div>
+        </div>
+        <ul class="tag-list">
+          <li class="tag">Python</li>
+          <li class="tag">Selenium</li>
+          <li class="tag">Discord.py</li>
+          <li class="tag">REST APIs</li>
+          <li class="tag">OAuth 2.0</li>
+        </ul>
+        <ul class="bullet-list">
+          <li>Automated Discord announcements, email campaigns, Instagram publishing, and room reservations for university clubs.</li>
+          <li>Currently deployed across multiple organizations to streamline administrative overhead.</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <div class="card-header">
+          <div>
+            <h3 class="card-title">Housing Market Analysis</h3>
+            <p class="card-subtitle">Predictive Pricing Models</p>
+          </div>
+          <div class="card-meta">
+            <span class="meta-line">Jun 2024 – Jul 2024</span>
+          </div>
+        </div>
+        <ul class="tag-list">
+          <li class="tag">Python</li>
+          <li class="tag">Pandas</li>
+          <li class="tag">SciPy</li>
+          <li class="tag">NumPy</li>
+          <li class="tag">scikit-learn</li>
+          <li class="tag">SQL</li>
+        </ul>
+        <ul class="bullet-list">
+          <li>Trained feedforward neural networks for price prediction using engineered features derived from public listings and census data.</li>
+          <li>Applied PCA and statistical analysis to identify high-signal attributes and reduce overfitting.</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <div class="card-header">
+          <div>
+            <h3 class="card-title">Independent Game Development</h3>
+            <p class="card-subtitle">National Game Jam Winner</p>
+          </div>
+          <div class="card-meta">
+            <span class="meta-line">2020 – 2023</span>
+          </div>
+        </div>
+        <ul class="tag-list">
+          <li class="tag">C#</li>
+          <li class="tag">C++</li>
+          <li class="tag">Unity</li>
+          <li class="tag">Unreal Engine</li>
+          <li class="tag">Blender</li>
+          <li class="tag">Adobe Suite</li>
+        </ul>
+        <ul class="bullet-list">
+          <li>Published two action platformers, including a custom 2D soft-body simulation available via Two Guys Studios on itch.io.</li>
+          <li>Placed second in the 2021 Mindbox National Design Championship; finalist in 2020 edition.</li>
+          <li>Built a procedural map generation toolkit leveraging noise algorithms and custom pathfinding.</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <div class="card-header">
+          <div>
+            <h3 class="card-title">Author · A Very Quick Guide to Special Relativity</h3>
+            <p class="card-subtitle">Educational Publication</p>
+          </div>
+          <div class="card-meta">
+            <span class="meta-line">Sep 2020 – Jun 2021</span>
+          </div>
+        </div>
+        <ul class="bullet-list">
+          <li>Authored and published an accessible introduction to special relativity covering time dilation through mass–energy equivalence.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section id="organizations">
+      <h2 class="section-title">Organizations</h2>
+
+      <article class="card">
+        <div class="card-header">
+          <div>
+            <h3 class="card-title">Industry Chair · Quantum Coalition</h3>
+          </div>
+          <div class="card-meta">
+            <span class="meta-line">Jan 2024 – Present</span>
+          </div>
+        </div>
+        <ul class="bullet-list">
+          <li>Co-organized the QRISE research competition with 200+ international participants.</li>
+          <li>Partnered with the UN and ITU to deliver the QC-FLIQ hackathon for the International Year of Quantum (500+ attendees).</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <div class="card-header">
+          <div>
+            <h3 class="card-title">President · Undergraduate Quantum Association</h3>
+          </div>
+          <div class="card-meta">
+            <span class="meta-line">Jan 2024 – Present</span>
+          </div>
+        </div>
+        <ul class="bullet-list">
+          <li>Led organizational strategy, programming, and outreach after serving as officer since 2020.</li>
+          <li>Produced the Quantum Leap Career Nexus with 240+ attendees and partners including IBM, Microsoft, and IonQ.</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <div class="card-header">
+          <div>
+            <h3 class="card-title">Co-President · ACM@UMD</h3>
+          </div>
+          <div class="card-meta">
+            <span class="meta-line">Sep 2023 – Present</span>
+          </div>
+        </div>
+        <ul class="bullet-list">
+          <li>Restarted the university chapter, launched a new website, and grew membership beyond 145 students.</li>
+          <li>Led workshops focused on shell scripting, AI, quantum computing, and heuristic search techniques.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section id="courses">
+      <h2 class="section-title">Relevant Courses</h2>
+      <div class="courses-card">
+        <label class="filter-label" for="course-filter">Search Courses</label>
+        <input class="filter-input" id="course-filter" type="search" placeholder="Start typing to filter by course or code…" />
+        <div class="courses-grid" id="courses-grid">
+          <span class="course-pill">Graduate Quantum Computing (CMSC657)</span>
+          <span class="course-pill">Computer Science Honors Seminar</span>
+          <span class="course-pill">Differentiable Programming for Agentic AI (CMSC498Z)</span>
+          <span class="course-pill">Natural Language Processing (CMSC470)</span>
+          <span class="course-pill">Data Science (CMSC320)</span>
+          <span class="course-pill">Design & Analysis of Algorithms (CMSC451)</span>
+          <span class="course-pill">Object-Oriented Programming in Java (CMSC132)</span>
+          <span class="course-pill">Applied Probability & Statistics (STAT400)</span>
+          <span class="course-pill">Honors Advanced Modern Physics (PHYS400)</span>
+          <span class="course-pill">Quantum Mechanics II (PHYS402)</span>
+          <span class="course-pill">Multivariate Calculus</span>
+          <span class="course-pill">Differential Equations</span>
+        </div>
+        <div class="empty-state" id="courses-empty">No courses match that search. Try a broader keyword.</div>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    const courseFilterInput = document.getElementById('course-filter');
+    const coursePills = Array.from(document.querySelectorAll('.course-pill'));
+    const emptyState = document.getElementById('courses-empty');
+
+    function applyCourseFilter(value) {
+      const query = value.trim().toLowerCase();
+      let visibleCount = 0;
+
+      coursePills.forEach((pill) => {
+        const matches = pill.textContent.toLowerCase().includes(query);
+        pill.classList.toggle('hidden', !matches);
+        if (matches) visibleCount += 1;
+      });
+
+      emptyState.style.display = visibleCount === 0 ? 'block' : 'none';
+    }
+
+    courseFilterInput.addEventListener('input', (event) => {
+      applyCourseFilter(event.target.value);
+    });
+  </script>
+</body>
+</html>

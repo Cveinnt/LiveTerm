@@ -134,7 +134,8 @@ function parse(text) {
         flushSkill();
         const key = slug(label);
         section = SECTIONS[key] ? { key, cfg: SECTIONS[key] } : null;
-        if (!section) process.stderr.write(`warn: unknown section "${label}"\n`);
+        if (!section)
+          process.stderr.write(`warn: unknown section "${label}"\n`);
       } else if (level === 2 && section) {
         if (section.cfg.kind === 'items') {
           flushItem();
@@ -150,8 +151,10 @@ function parse(text) {
 
     if (t.startsWith('- ')) {
       const val = t.slice(2).trim();
-      if (section && section.cfg.kind === 'items' && itemBullets) itemBullets.push(val);
-      else if (section && section.cfg.kind === 'skills' && skillCat) skillCat.list.push(val);
+      if (section && section.cfg.kind === 'items' && itemBullets)
+        itemBullets.push(val);
+      else if (section && section.cfg.kind === 'skills' && skillCat)
+        skillCat.list.push(val);
       continue;
     }
 
