@@ -32,12 +32,12 @@ div#__next > div {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(154, 205, 50, 0.5);
+  background: rgba(215, 153, 33, 0.5);
   border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(154, 205, 50, 0.75);
+  background: rgba(215, 153, 33, 0.75);
 }
 
 /* --- Prompt line --- */
@@ -46,16 +46,16 @@ div#__next > div {
 }
 
 .ps1-separator {
-  color: rgba(154, 205, 50, 0.85);
+  color: rgba(215, 153, 33, 0.85);
   margin: 0 2px;
 }
 
 .ps1-host {
-  color: #a4ffce;
+  color: #8ec07c;
 }
 
 .ps1-path {
-  color: rgba(186, 255, 216, 0.85);
+  color: rgba(235, 219, 178, 0.85);
   margin-left: 4px;
 }
 
@@ -77,7 +77,7 @@ div#__next > div {
   white-space: pre-wrap;
 }
 .tree-branch {
-  color: rgba(154, 205, 50, 0.65);
+  color: rgba(215, 153, 33, 0.65);
 }
 .tree-row {
   display: inline;
@@ -85,7 +85,7 @@ div#__next > div {
   border-radius: 3px;
 }
 .tree-row:hover {
-  background: rgba(154, 205, 50, 0.12);
+  background: rgba(215, 153, 33, 0.12);
 }
 
 /* --- sumfetch: flat text summary --- */
@@ -97,14 +97,14 @@ div#__next > div {
 .sf-name {
   font-weight: 700;
   font-size: 1.05em;
-  color: #b6ff66;
+  color: #fabd2f;
 }
 .sf-title {
-  color: rgba(154, 205, 50, 0.85);
+  color: rgba(215, 153, 33, 0.85);
   font-weight: 700;
 }
 .sf-key {
-  color: #9eff88;
+  color: #a89984;
 }
 .sf-link {
   color: inherit;
@@ -124,12 +124,12 @@ div#__next > div {
   z-index: 50;
   font-size: 0.75rem;
   padding: 0.375rem 0.75rem;
-  border: 1px solid rgba(154, 205, 50, 0.6);
-  color: rgba(186, 255, 216, 0.9);
+  border: 1px solid rgba(215, 153, 33, 0.6);
+  color: rgba(235, 219, 178, 0.9);
   text-decoration: none;
   transition: background-color 0.15s ease, color 0.15s ease;
 }
 .resume-fab:hover {
-  background: rgba(154, 205, 50, 0.85);
-  color: #06210f;
+  background: rgba(215, 153, 33, 0.85);
+  color: #1d2021;
 }
