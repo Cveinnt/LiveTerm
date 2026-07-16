@@ -17,12 +17,17 @@ export type Experience = {
   role: string;
   company: string;
   dates: string;
+  subtitle?: string;
+  location?: string;
+  tech?: string[];
   bullets: string[];
 };
 export type Project = {
   id?: string;
   name: string;
   timeline: string;
+  subtitle?: string;
+  tech?: string[];
   bullets: string[];
 };
 export type Education = {
@@ -30,6 +35,7 @@ export type Education = {
   school: string;
   gpa: string;
   graduation: string;
+  subtitle?: string;
   degrees: string[];
   honors: string[];
   coursework: string[];
