@@ -27,7 +27,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '24'
       - name: Verify resume.json matches resume.org
         run: node scripts/org-to-json.mjs resume.org resume.json --check
       - name: Verify public/resume.html matches resume.json
