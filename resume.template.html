@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mihir Talati – Resume</title>
+    <style>
+      /* Gruvbox dark palette (matches the terminal theme). */
+      :root {
+        --content-max-width: 960px;
+        --primary-text: #ebdbb2;
+        --secondary-text: #a89984;
+        --accent: #d79921;
+        --accent-bright: #fabd2f;
+        --card-bg: #32302f;
+        --card-border: rgba(215, 153, 33, 0.3);
+        --page-bg: radial-gradient(circle at top, #32302f 0%, #1d2021 60%);
+        --tag-bg: rgba(215, 153, 33, 0.12);
+        --tag-border: rgba(215, 153, 33, 0.4);
+        --filter-border: rgba(168, 153, 132, 0.4);
+        --filter-focus: rgba(215, 153, 33, 0.55);
+        --glass-highlight: rgba(235, 219, 178, 0.05);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: 'IBM Plex Mono', 'Fira Code', ui-monospace, SFMono-Regular,
+          Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+        background: #1d2021;
+        background-image: var(--page-bg);
+        color: var(--primary-text);
+        line-height: 1.65;
+        letter-spacing: 0.01em;
+        position: relative;
+        overflow-x: hidden;
+        min-height: 100vh;
+      }
+
+      .container {
+        max-width: var(--content-max-width);
+        margin: 0 auto;
+        padding: 64px 32px 96px;
+      }
+
+      header {
+        text-align: center;
+        margin-bottom: 56px;
+      }
+
+      header h1 {
+        margin: 0;
+        font-size: 2.6rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: #fbf1c7;
+      }
+
+      header p {
+        margin: 12px 0 0;
+        color: var(--secondary-text);
+        font-size: 1.05rem;
+      }
+
+      section + section {
+        margin-top: 56px;
+      }
+
+      .section-title {
+        font-size: 1.2rem;
+        font-weight: 700;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin-bottom: 20px;
+      }
+
+      .card {
+        position: relative;
+        border-radius: 20px;
+        padding: 32px 36px;
+        background: var(--card-bg);
+        border: 1px solid var(--card-border);
+        box-shadow: 0 1px 0 var(--glass-highlight),
+          0 20px 40px rgba(0, 0, 0, 0.35);
+      }
+
+      .card::after {
+        content: '';
+        position: absolute;
+        inset: 12px;
+        border-radius: 14px;
+        border: 1px solid rgba(235, 219, 178, 0.05);
+        pointer-events: none;
+      }
+
+      .card + .card {
+        margin-top: 28px;
+      }
+
+      .card-header {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px 16px;
+        align-items: baseline;
+        justify-content: space-between;
+        margin-bottom: 20px;
+        position: relative;
+        z-index: 1;
+      }
+
+      .card-title {
+        margin: 0;
+        font-size: 1.2rem;
+        font-weight: 600;
+        letter-spacing: 0.04em;
+        color: #fbf1c7;
+      }
+
+      .card-subtitle {
+        margin: 0;
+        font-weight: 500;
+        color: var(--secondary-text);
+      }
+
+      .card-meta {
+        text-align: right;
+        color: var(--secondary-text);
+        font-size: 0.95rem;
+      }
+
+      .meta-line {
+        display: block;
+      }
+
+      .tag-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin: 0 0 20px;
+        padding: 0;
+        list-style: none;
+        position: relative;
+        z-index: 1;
+      }
+
+      .tag {
+        display: inline-flex;
+        align-items: center;
+        padding: 5px 14px;
+        border-radius: 999px;
+        border: 1px solid var(--tag-border);
+        background: var(--tag-bg);
+        color: var(--accent-bright);
+        font-size: 0.85rem;
+        font-weight: 600;
+        letter-spacing: 0.02em;
+      }
+
+      ul.bullet-list {
+        margin: 0;
+        padding-left: 22px;
+        position: relative;
+        z-index: 1;
+      }
+
+      ul.bullet-list li {
+        margin-bottom: 12px;
+        color: var(--primary-text);
+      }
+
+      ul.bullet-list li:last-child {
+        margin-bottom: 0;
+      }
+
+      .education-grid {
+        display: grid;
+        gap: 32px;
+      }
+
+      .scholarships {
+        margin-top: 20px;
+        padding-top: 18px;
+        border-top: 1px solid rgba(168, 153, 132, 0.24);
+      }
+
+      .scholarships-title {
+        font-weight: 600;
+        margin: 0 0 10px;
+        color: var(--secondary-text);
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        font-size: 0.75rem;
+      }
+
+      .courses-card {
+        background: linear-gradient(160deg, #32302f 0%, #1d2021 70%);
+        border-radius: 24px;
+        padding: 36px;
+        border: 1px solid rgba(215, 153, 33, 0.35);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .filter-label {
+        display: block;
+        font-weight: 600;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        font-size: 0.75rem;
+        color: var(--secondary-text);
+        margin-bottom: 8px;
+        position: relative;
+        z-index: 1;
+      }
+
+      .filter-input {
+        width: 100%;
+        padding: 14px 18px;
+        border-radius: 12px;
+        border: 1px solid var(--filter-border);
+        font-size: 1rem;
+        background: #1d2021;
+        color: var(--primary-text);
+        transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        position: relative;
+        z-index: 1;
+      }
+
+      .filter-input::placeholder {
+        color: rgba(168, 153, 132, 0.6);
+      }
+
+      .filter-input:focus {
+        outline: none;
+        border-color: var(--filter-focus);
+        box-shadow: 0 0 0 4px rgba(215, 153, 33, 0.18);
+      }
+
+      .courses-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 14px;
+        margin-top: 26px;
+        position: relative;
+        z-index: 1;
+      }
+
+      .course-pill {
+        background: #3c3836;
+        border-radius: 16px;
+        padding: 12px 16px;
+        border: 1px solid rgba(215, 153, 33, 0.35);
+        font-weight: 500;
+        color: var(--primary-text);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+        transition: transform 0.15s ease, box-shadow 0.15s ease,
+          border-color 0.15s ease;
+      }
+
+      .course-pill:hover {
+        transform: translateY(-2px);
+        border-color: rgba(215, 153, 33, 0.65);
+        box-shadow: 0 16px 32px rgba(0, 0, 0, 0.4);
+      }
+
+      .course-pill.hidden {
+        display: none;
+      }
+
+      .empty-state {
+        display: none;
+        margin-top: 24px;
+        padding: 18px;
+        border-radius: 14px;
+        background: rgba(40, 40, 40, 0.8);
+        border: 1px dashed rgba(215, 153, 33, 0.5);
+        color: var(--secondary-text);
+        text-align: center;
+        font-weight: 500;
+        position: relative;
+        z-index: 1;
+      }
+
+      a {
+        color: var(--accent);
+      }
+
+      @media (max-width: 720px) {
+        header h1 {
+          font-size: 2.1rem;
+        }
+
+        .card {
+          padding: 26px;
+        }
+
+        .card-header {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .card-meta {
+          text-align: left;
+        }
+
+        .courses-grid {
+          grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        }
+      }
+    </style>
+
+    <style>
+      /* generated-page additions */
+      .toolbar {
+        margin-bottom: 40px;
+      }
+      .hidden {
+        display: none !important;
+      }
+      section.hidden {
+        display: none;
+      }
+      .card[data-search] {
+        scroll-margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>{{NAME}}</h1>
+        <p>{{HEADER_SUB}}</p>
+      </header>
+
+      <div class="courses-card toolbar">
+        <label class="filter-label" for="global-search">Search résumé</label>
+        <input
+          class="filter-input"
+          id="global-search"
+          type="search"
+          placeholder="Filter by keyword, tech, or course…"
+          autocomplete="off"
+        />
+      </div>
+
+      {{SECTIONS}}
+
+      <div class="empty-state" id="global-empty">
+        No entries match that search. Try a broader keyword.
+      </div>
+    </div>
+
+    <script>
+      const search = document.getElementById('global-search');
+      const empty = document.getElementById('global-empty');
+      const items = Array.from(document.querySelectorAll('[data-search]'));
+      const sections = Array.from(
+        document.querySelectorAll('main section, .container section'),
+      );
+      function apply(value) {
+        const q = value.trim().toLowerCase();
+        let total = 0;
+        items.forEach((el) => {
+          const hit = el.getAttribute('data-search').includes(q);
+          el.classList.toggle('hidden', !hit);
+          if (hit) total += 1;
+        });
+        sections.forEach((sec) => {
+          const vis = sec.querySelectorAll('[data-search]:not(.hidden)').length;
+          sec.classList.toggle('hidden', vis === 0);
+        });
+        empty.style.display = total === 0 ? 'block' : 'none';
+      }
+      search.addEventListener('input', (e) => apply(e.target.value));
+    </script>
+  </body>
+</html>

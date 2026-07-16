@@ -1,0 +1,39 @@
+# Build the static export and publish it to the Mihir-Null.github.io repo,
+# which serves GitHub Pages (custom domain nullis.me) from its docs/ folder.
+# MiTerm is the canonical source; github.io holds build output only.
+#
+# REQUIRED SECRET: GH_PAGES_DEPLOY_TOKEN
+#   A fine-grained PAT (or classic repo-scoped token) with Contents: write on
+#   Mihir-Null/Mihir-Null.github.io. Add it under this repo's
+#   Settings → Secrets and variables → Actions. Until it is set, the deploy job
+#   fails (harmlessly — it only runs on main); the site keeps serving the last
+#   published build. See docs/decisions/0002-deploy-topology.org.
+name: deploy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+      - name: Build static export (regenerates resume.json + resume.html first)
+        run: yarn export
+      - name: Publish to github.io/docs
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          personal_token: ${{ secrets.GH_PAGES_DEPLOY_TOKEN }}
+          external_repository: Mihir-Null/Mihir-Null.github.io
+          publish_branch: main
+          publish_dir: ./out
+          destination_dir: docs
+          cname: nullis.me
+          full_commit_message: 'Deploy from MiTerm ${{ github.sha }}'

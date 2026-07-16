@@ -1,0 +1,43 @@
+:PROPERTIES:
+:ID:       97d6eebf-f0a1-4001-a30f-9c06d01a1f3c
+:END:
+#+TITLE: ADR 0002 — Deploy Topology: MiTerm → github.io
+#+FILETAGS: :adr:miterm:deploy:
+
+Status: accepted (2026-07-16)
+Deciders: Mihir Talati (navigator), agent (driver)
+
+* Context
+ADR 0001 set MiTerm as the canonical app and Mihir-Null.github.io as build
+output only. The site is served by GitHub Pages from ~Mihir-Null.github.io~'s
+~docs/~ folder on ~main~, at the custom domain nullis.me.
+
+* Decision
+MiTerm builds a static export (~yarn export~ → ~out/~) and a GitHub Action
+publishes it into ~Mihir-Null.github.io/docs~ on every push to ~main~. The
+github.io repo keeps only served artifacts (~docs/~, ~CNAME~, ~.well-known/~,
+~LICENSE~, ~README~); its former Next.js source is removed.
+
+- Mechanism: ~.github/workflows/deploy.yml~ uses
+  ~peaceiris/actions-gh-pages@v4~ with ~external_repository~, publishing
+  ~./out~ to ~docs/~ and writing ~CNAME: nullis.me~.
+- The résumé mirrors (resume.json, public/resume.html) regenerate during
+  ~yarn export~ via ~prebuild~, so a deploy always reflects resume.org.
+
+* Operational dependency (ACTION REQUIRED)
+The cross-repo push needs a token MiTerm's Actions can use:
+- Create a fine-grained PAT with *Contents: write* on
+  Mihir-Null/Mihir-Null.github.io (or a classic repo-scoped token).
+- Add it to MiTerm under Settings → Secrets and variables → Actions as
+  ~GH_PAGES_DEPLOY_TOKEN~.
+- Confirm Pages on github.io is set to *Deploy from a branch → main → /docs*.
+Until the secret exists the deploy job fails harmlessly; the last published
+build keeps serving.
+
+* Consequences
+- One source, one deploy path; the github.io repo stops drifting because it no
+  longer holds source.
+- A one-time manual export seeded github.io/docs with the redesigned build so
+  the change is reviewable without waiting on the token.
+- Vercel config (~vercel.json~) is retained for optional preview deploys of the
+  canonical app; it does not affect the nullis.me production path.

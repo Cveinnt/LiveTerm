@@ -8,12 +8,13 @@
     "email": "contact@wensenwu.com"
   },
   "scripts": {
-    "resume:build": "node scripts/org-to-json.mjs resume.org resume.json",
-    "resume:check": "node scripts/org-to-json.mjs resume.org resume.json --check",
+    "resume:build": "node scripts/org-to-json.mjs resume.org resume.json && node scripts/build-resume-html.mjs",
+    "resume:check": "node scripts/org-to-json.mjs resume.org resume.json --check && node scripts/build-resume-html.mjs --check",
     "prebuild": "yarn resume:build",
     "predev": "yarn resume:build",
     "dev": "next dev",
     "build": "next build",
+    "export": "next build && next export -o out && touch out/.nojekyll",
     "start": "next start",
     "lint": "next lint",
     "prepare": "husky install"

@@ -27,15 +27,109 @@ div#__next > div {
 }
 
 ::-webkit-scrollbar-track {
-  background: #1e252e;
+  background: rgba(0, 0, 0, 0.15);
   border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #ebdbb2;
+  background: rgba(215, 153, 33, 0.5);
   border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #ff8037;
+  background: rgba(215, 153, 33, 0.75);
+}
+
+/* --- Prompt line --- */
+.terminal-current-line {
+  padding: 2px 0;
+}
+
+.ps1-separator {
+  color: rgba(215, 153, 33, 0.85);
+  margin: 0 2px;
+}
+
+.ps1-host {
+  color: #8ec07c;
+}
+
+.ps1-path {
+  color: rgba(235, 219, 178, 0.85);
+  margin-left: 4px;
+}
+
+/* --- Clickable elements, modern-terminal style: underline on hover --- */
+.term-link {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px dotted currentColor;
+  cursor: pointer;
+}
+.term-link:hover {
+  text-decoration: none;
+  border-bottom-style: solid;
+  filter: brightness(1.25);
+}
+
+/* --- Tree listing (ls) --- */
+.tree {
+  white-space: pre-wrap;
+}
+.tree-branch {
+  color: rgba(215, 153, 33, 0.65);
+}
+.tree-row {
+  display: inline;
+  padding: 0 3px;
+  border-radius: 3px;
+}
+.tree-row:hover {
+  background: rgba(215, 153, 33, 0.12);
+}
+
+/* --- sumfetch: flat text summary --- */
+.sumfetch {
+  white-space: pre-wrap;
+  margin: 0;
+  line-height: 1.35;
+}
+.sf-name {
+  font-weight: 700;
+  font-size: 1.05em;
+  color: #fabd2f;
+}
+.sf-title {
+  color: rgba(215, 153, 33, 0.85);
+  font-weight: 700;
+}
+.sf-key {
+  color: #a89984;
+}
+.sf-link {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px dotted currentColor;
+}
+.sf-link:hover {
+  border-bottom-style: solid;
+  filter: brightness(1.25);
+}
+
+/* --- Floating resume button --- */
+.resume-fab {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  z-index: 50;
+  font-size: 0.75rem;
+  padding: 0.375rem 0.75rem;
+  border: 1px solid rgba(215, 153, 33, 0.6);
+  color: rgba(235, 219, 178, 0.9);
+  text-decoration: none;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+.resume-fab:hover {
+  background: rgba(215, 153, 33, 0.85);
+  color: #1d2021;
 }

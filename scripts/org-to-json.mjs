@@ -28,17 +28,40 @@ const GENERATED_NOTE =
   'Regenerate: node scripts/org-to-json.mjs';
 
 // Section registry — the fixed schema the parser understands.
+// `fields` are optional scalar drawer props (included only when present);
+// `tagged` routes `- k :: v` bullets into named arrays; `list: false` means
+// the item has no free-form bullets array (education is all tagged).
 const SECTIONS = {
   profile: { kind: 'profile' },
-  experience: { kind: 'items', fields: ['role', 'company', 'dates'] },
-  projects: { kind: 'items', fields: ['name', 'timeline'] },
+  experience: {
+    kind: 'items',
+    fields: ['role', 'company', 'dates', 'subtitle', 'location'],
+    tagged: { tech: 'tech' },
+    list: true,
+  },
+  projects: {
+    kind: 'items',
+    fields: ['name', 'timeline', 'subtitle'],
+    tagged: { tech: 'tech' },
+    list: true,
+  },
   education: {
     kind: 'items',
-    fields: ['school', 'gpa', 'graduation'],
+    fields: ['school', 'gpa', 'graduation', 'subtitle'],
     tagged: { degree: 'degrees', honor: 'honors', course: 'coursework' },
+    list: false,
   },
-  organizations: { kind: 'items', fields: ['role', 'org', 'dates'] },
-  publications: { kind: 'items', fields: ['title', 'status'] },
+  organizations: {
+    kind: 'items',
+    fields: ['role', 'org', 'dates'],
+    list: true,
+  },
+  publications: { kind: 'items', fields: ['title', 'status'], list: true },
+  certifications: {
+    kind: 'items',
+    fields: ['name', 'issuer', 'date'],
+    list: false,
+  },
   skills: { kind: 'skills' },
 };
 
@@ -76,7 +99,10 @@ function makeItem(cfg, props, bullets) {
       plain.push(raw);
     }
   }
-  if (!cfg.tagged) item.bullets = plain;
+  // Drop empty tagged arrays so optional groups (e.g. tech) don't add noise.
+  for (const key of Object.values(tagged))
+    if (item[key].length === 0) delete item[key];
+  if (cfg.list) item.bullets = plain;
   return item;
 }
 
@@ -89,6 +115,7 @@ function parse(text) {
     education: [],
     organizations: [],
     publications: [],
+    certifications: [],
     skills: {},
   };
   const bioLines = [];
@@ -134,7 +161,8 @@ function parse(text) {
         flushSkill();
         const key = slug(label);
         section = SECTIONS[key] ? { key, cfg: SECTIONS[key] } : null;
-        if (!section) process.stderr.write(`warn: unknown section "${label}"\n`);
+        if (!section)
+          process.stderr.write(`warn: unknown section "${label}"\n`);
       } else if (level === 2 && section) {
         if (section.cfg.kind === 'items') {
           flushItem();
@@ -150,8 +178,10 @@ function parse(text) {
 
     if (t.startsWith('- ')) {
       const val = t.slice(2).trim();
-      if (section && section.cfg.kind === 'items' && itemBullets) itemBullets.push(val);
-      else if (section && section.cfg.kind === 'skills' && skillCat) skillCat.list.push(val);
+      if (section && section.cfg.kind === 'items' && itemBullets)
+        itemBullets.push(val);
+      else if (section && section.cfg.kind === 'skills' && skillCat)
+        skillCat.list.push(val);
       continue;
     }
 
@@ -175,6 +205,7 @@ function serialize(data) {
     education: data.education,
     organizations: data.organizations,
     publications: data.publications,
+    certifications: data.certifications,
     skills: data.skills,
   };
   return JSON.stringify(ordered, null, 2) + '\n';

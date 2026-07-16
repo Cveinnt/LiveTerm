@@ -1,21 +1,12 @@
 {
-  "readmeUrl": "https://raw.githubusercontent.com/cveinnt/cveinnt/master/README.md",
-  "title": "LiveTerm",
-  "name": "John Doe",
-  "ascii": "liveterm",
-  "social": {
-    "github": "github",
-    "linkedin": "linkedin"
-  },
-  "email": "contact@email.com",
-  "ps1_hostname": "liveterm",
-  "ps1_username": "visitor",
-  "repo": "https://github.com/Cveinnt/LiveTerm",
-  "resume_url": "https://upload.wikimedia.org/wikipedia/commons/c/cc/Resume.pdf",
-  "donate_urls": {
-    "paypal": "https://paypal.me/cveinnt",
-    "patreon": "https://patreon.com/cveinnt"
-  },
+  "readmeUrl": "https://raw.githubusercontent.com/Mihir-Null/Mihir-Null/main/README.md",
+  "title": "Mihir Null",
+  "ascii": "MiTerm",
+  "ps1_hostname": "MiTerm",
+  "ps1_username": "MihirTalati",
+  "theme": "gruvbox",
+  "repo": "https://github.com/Mihir-Null",
+  "resume_url": "/resume.html",
   "colors": {
     "light": {
       "background": "#FBF1C9",
