@@ -14,6 +14,7 @@
     "predev": "yarn resume:build",
     "dev": "next dev",
     "build": "next build",
+    "export": "next build && next export -o out && touch out/.nojekyll",
     "start": "next start",
     "lint": "next lint",
     "prepare": "husky install"
