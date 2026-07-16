@@ -1,0 +1,49 @@
+:PROPERTIES:
+:ID:       1592cfdd-398a-4604-a843-eed9d0f7d1bb
+:END:
+#+TITLE: Résumé Pipeline (Reference)
+#+FILETAGS: :miterm:reference:
+
+Diátaxis: reference. How résumé content flows from authoring to the rendered
+site. See [[file:decisions/0001-miterm-redesign-decisions.org][ADR 0001]] for why.
+
+* Data flow
+#+begin_example
+resume.org            canonical source (you edit ONLY this)
+   │  node scripts/org-to-json.mjs resume.org resume.json   (one-way, prebuild)
+   ▼
+resume.json           declared mirror — generated, never hand-edited
+   │
+   ├─► terminal        ls / sumfetch / summary read resume.json
+   └─► resume.html     plain page reads resume.json
+   │  next build && export
+   ▼
+docs/ (github.io)     build output — GitHub Pages, CNAME nullis.me
+#+end_example
+
+* Mirror table (praxis: Mirrors and Canaries)
+| Fact                         | Canonical home        | Mirror(s)        | Canary                         |
+|------------------------------+-----------------------+------------------+--------------------------------|
+| résumé content + profile     | resume.org            | resume.json      | ~yarn resume:check~ (regen+diff) |
+| rendered terminal / plain    | resume.json           | DOM at runtime   | build reads mirror, no copy    |
+
+A mirror without a canary is a defect. ~resume.json~'s canary is the
+~--check~ mode of the parser, run in CI and before build.
+
+* How to edit the résumé
+1. Edit ~resume.org~. To add an item, copy an item heading, mint a fresh
+   ~:ID:~ (~org-id-get-create~ or ~uuidgen~), fill the drawer + bullets.
+2. Run ~yarn resume:build~ (or just ~yarn dev~ / ~yarn build~ — it runs first).
+3. Commit ~resume.org~ *and* the regenerated ~resume.json~ together, so the
+   canonical change and its mirror land in one commit.
+
+* Schema (RESUME_SCHEMA: 1)
+- ~* Section~ headings: Profile, Experience, Projects, Education,
+  Organizations, Publications, Skills.
+- ~** Item~ headings carry an ~:ID:~ and typed scalar fields in a drawer.
+- ~- bullet~ → the item's ~bullets~ array.
+- ~- tag :: value~ → named arrays; Education uses ~degree~, ~honor~, ~course~.
+- Profile: drawer → identity fields; prose body → ~bio~.
+- Skills: ~** Category~ headings; bullets → that category's list.
+
+The parser contract lives at the top of ~scripts/org-to-json.mjs~.

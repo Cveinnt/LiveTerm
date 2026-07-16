@@ -1,0 +1,20 @@
+# Drift canary for the résumé declared mirror (praxis: Mirrors and Canaries).
+# Fails if resume.json is out of sync with its canonical source resume.org.
+name: resume-canary
+
+on:
+  push:
+    paths: ['resume.org', 'resume.json', 'scripts/org-to-json.mjs']
+  pull_request:
+    paths: ['resume.org', 'resume.json', 'scripts/org-to-json.mjs']
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Verify resume.json matches resume.org
+        run: node scripts/org-to-json.mjs resume.org resume.json --check

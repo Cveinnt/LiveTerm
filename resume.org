@@ -1,0 +1,252 @@
+:PROPERTIES:
+:ID:       9e39c816-2584-4004-a47d-d12edd3ed346
+:RESUME_SCHEMA: 1
+:END:
+#+TITLE: Mihir Talati — Résumé (Canonical Source)
+#+FILETAGS: :resume:
+
+# ============================================================================
+# CANONICAL RESUME SOURCE — SINGLE SOURCE OF TRUTH
+#
+# This file is the one authoritative home for every résumé fact. The terminal
+# (ls / sumfetch / summary) and the plain résumé page both read `resume.json`,
+# which is a DECLARED MIRROR generated from this file by:
+#
+#     node scripts/org-to-json.mjs resume.org resume.json
+#
+# Flow is one-way: org -> json. Never hand-edit resume.json; edit THIS file and
+# regenerate. CI re-runs the parser and fails on any diff (the canary).
+#
+# SCHEMA the parser expects (RESUME_SCHEMA: 1):
+#   * Section            top-level headings name the sections below.
+#   ** Item              each item is a roam node: it carries its own :ID: and
+#                        typed scalar fields in a :PROPERTIES: drawer.
+#   - bullet             plain list items become the item's `bullets` array.
+#   - tag :: value       tagged bullets route into named arrays (education uses
+#                        `degree`, `honor`, `course`).
+# Add a new experience/project/etc. by copying an item heading, minting a fresh
+# :ID: (`org-id-get-create` in Emacs, or `uuidgen`), and filling the drawer.
+# ============================================================================
+
+* Profile
+:PROPERTIES:
+:NAME:     Mihir Talati
+:GITHUB:   Mihir-Null
+:LINKEDIN: mihir-talati-2671a2247
+:EMAIL:    mihirtalati3@gmail.com
+:PHONE:    (240)-351-1014
+:CITIZENSHIP: US
+:END:
+Pursuing dual degrees in Computer Science and Physics at the University of
+Maryland. Exploring quantum computing, machine learning, and physics based
+simulation with an emphasis on research and development. Interested in all
+things science and technology. Hobbies include tinkering with unix and
+hardware, game development and literature.
+
+* Experience
+** Researcher — CAAR REU (QuICS)
+:PROPERTIES:
+:ID:       809dd6f7-7700-43ae-ac87-ae2ec79ab4ef
+:ROLE:     Researcher
+:COMPANY:  CAAR REU (QuICS)
+:DATES:    Jun 2025 – Aug 2025
+:END:
+- Created families of fault-tolerant CSS quantum error-correcting codes for qudits.
+- Proved transversal Clifford and T gate support using finite field and QEC theory.
+- Built parallel Python tooling (Galois, NumPy, Magma, SageMath) to test self-orthogonality and distance.
+
+** Undergraduate Researcher — Bright Beams Collective (IREAP)
+:PROPERTIES:
+:ID:       4ee96812-4a42-4fce-ab41-223dc3237ed1
+:ROLE:     Undergraduate Researcher
+:COMPANY:  Bright Beams Collective (IREAP)
+:DATES:    Sep 2023 – Dec 2024
+:END:
+- Designed machine learning and gradient optimizers for particle accelerator beamline tuning.
+- Ran MAD-X and Elegant simulations to evaluate lattice stability and beam quality.
+- Produced Fusion 360 and Ansys visualizations for educational and technical presentations.
+
+** Software Engineering Intern — JODO PAY
+:PROPERTIES:
+:ID:       9ca345ca-c318-4d70-aa4d-8542bc322589
+:ROLE:     Software Engineering Intern
+:COMPANY:  JODO PAY
+:DATES:    Jun 2022 – Jul 2022
+:END:
+- Automated invoice generation and delivery via Google Workspace APIs.
+- Reduced manual processing by approximately 40 staff hours each week.
+- Hardened error handling and template management with TypeScript and Apps Script.
+
+* Projects
+** Quantum State Tomography via QML
+:PROPERTIES:
+:ID:       28f564fa-8ac8-4720-bf5c-cf999186cf6d
+:NAME:     Quantum State Tomography via QML
+:TIMELINE: Sep 2024 – Jul 2025
+:END:
+- Co-developed variational circuit tomography with custom losses and embeddings.
+- Launched 2,000+ experiments across multi-GPU clusters via bespoke orchestration tools.
+- Co-author on "Quantum state reconstruction with variational quantum circuit" (arXiv:2507.01246).
+
+** MIT iQuHack — QuEra Challenge
+:PROPERTIES:
+:ID:       25c4d9b7-ea24-4af7-8cac-f1855743abc6
+:NAME:     MIT iQuHack — QuEra Challenge
+:TIMELINE: Feb 2025
+:END:
+- Built a compilation pipeline translating QAOA and error-correcting circuits into neutral atom instructions.
+- Optimized pulse schedules using Qiskit, Cirq, Bloqade, PyTorch, and TensorFlow Quantum.
+- Team earned an Honorable Mention from QuEra.
+
+** Club Administration Automation
+:PROPERTIES:
+:ID:       e00b83aa-277b-4379-96aa-989754fefbcb
+:NAME:     Club Administration Automation
+:TIMELINE: Nov 2024 – Feb 2025
+:END:
+- Automated Discord announcements, email campaigns, Instagram posts, and room reservations.
+- Integrated Google APIs, Discord.py, Selenium, and OAuth2 for end-to-end workflows.
+- Adopted by multiple university clubs to reduce administrative effort.
+
+** Quantum ML Research Collection
+:PROPERTIES:
+:ID:       5a0897f1-4b2c-4dd4-a68e-8a324822f425
+:NAME:     Quantum ML Research Collection
+:TIMELINE: Aug 2023 – Dec 2024
+:END:
+- Crafted quantum image processing pipelines with parameterized kernels inside CNNs.
+- Designed a hybrid transitional optimizer that mitigates barren plateaus in QAOA.
+- Presented findings at the 2024 First Year Innovation & Research Experience Summit.
+
+** Housing Market Analysis
+:PROPERTIES:
+:ID:       25053703-72e2-492d-bf8b-4a5953b6160e
+:NAME:     Housing Market Analysis
+:TIMELINE: Jun 2024 – Jul 2024
+:END:
+- Built feedforward neural networks to predict housing prices from public datasets.
+- Applied PCA and statistical analysis to surface high-signal features.
+- Combined web-scraped listings with census data to improve model robustness.
+
+** Indie Game Development
+:PROPERTIES:
+:ID:       bdf83287-24aa-4f55-9a07-e11d6e08e319
+:NAME:     Indie Game Development
+:TIMELINE: 2020 – 2023
+:END:
+- Shipped two action platformers with custom soft-body simulation via Unity/Unreal.
+- 2nd place, 2021 Mindbox National Design Championship (Game Design).
+- National finalist, 2020 Mindbox Design Championship (Game Development).
+- Authored a procedural map generation toolkit for arbitrary tilemaps.
+
+* Education
+** University of Maryland — College Park
+:PROPERTIES:
+:ID:       86d31d81-d7e2-4035-9441-54badb1724a7
+:SCHOOL:   University of Maryland — College Park
+:GPA:      3.974
+:GRADUATION: May 2027
+:END:
+- degree :: B.S. Computer Science (Honors)
+- degree :: B.S. Physics (Honors)
+- honor :: Angelo Bardasis Scholarship — Physics
+- honor :: John D. Gannon Scholarship — Computer Science
+- honor :: Dean's List — Every Semester
+- course :: Graduate Quantum Computing (CMSC657)
+- course :: Differentiable Programming for Agentic AI (CMSC498Z)
+- course :: Natural Language Processing (CMSC470)
+- course :: Data Science (CMSC320)
+- course :: Design & Analysis of Algorithms (CMSC451)
+- course :: Honors Advanced Modern Physics (PHYS400)
+- course :: Quantum Mechanics II (PHYS402)
+
+* Organizations
+** Industry Chair — Quantum Coalition
+:PROPERTIES:
+:ID:       9ed6f6b0-5389-485f-aa00-e6c934737e3d
+:ROLE:     Industry Chair
+:ORG:      Quantum Coalition
+:DATES:    Jan 2024 – Present
+:END:
+- Co-organized the QRISE research competition with 200+ global participants.
+- Partnered with the UN and ITU to deliver the QC-FLIQ hackathon (500+ attendees).
+
+** President — Undergraduate Quantum Association
+:PROPERTIES:
+:ID:       c458048e-95be-4726-9345-b4af7650ba4d
+:ROLE:     President
+:ORG:      Undergraduate Quantum Association
+:DATES:    Jan 2025 – Present
+:END:
+- Led programming, partnerships, and outreach after four years as an officer.
+- Hosted the Quantum Leap Career Nexus with 240+ attendees across IBM, Microsoft, Amazon Braket, IonQ, and more.
+
+** Co-President — ACM@UMD
+:PROPERTIES:
+:ID:       145dbb0c-cf88-46e0-bc3e-052120e83978
+:ROLE:     Co-President
+:ORG:      ACM@UMD
+:DATES:    Sep 2023 – Present
+:END:
+- Restarted the official student chapter and launched a new web presence.
+- Grew membership to 145+ students with workshops on shell scripting, AI, and quantum computing.
+
+* Publications
+** Quantum state reconstruction with variational quantum circuit
+:PROPERTIES:
+:ID:       0f86c17a-6165-4b78-9610-5d6cb3da2977
+:TITLE:    Quantum state reconstruction with variational quantum circuit
+:STATUS:   Preprint — arXiv:2507.01246
+:END:
+- Introduces a quantum machine learning approach to tomography for high-dimensional states.
+- Benchmarks loss landscapes, embedding strategies, and optimizer behavior across noise models.
+- Highlights scalability results enabled by custom experiment orchestration.
+
+** A Very Quick Guide to Special Relativity
+:PROPERTIES:
+:ID:       e7c3273b-0c2b-43d4-94fc-fca989893799
+:TITLE:    A Very Quick Guide to Special Relativity
+:STATUS:   Published — 2021
+:END:
+- Wrote and published an accessible primer covering time dilation through mass-energy equivalence.
+- Focused on first-principles explanations for students exploring modern physics.
+
+* Skills
+** Languages
+- Python
+- C
+- C++
+- JavaScript/TypeScript
+- Rust (learning)
+
+** Quantum
+- Qiskit
+- Cirq
+- PennyLane
+- Q#
+- Bloqade
+
+** ML
+- PyTorch
+- TensorFlow Quantum
+- NumPy
+- SciPy
+- scikit-learn
+- MPI
+- Numba
+
+** Simulation
+- MAD-X
+- Elegant
+- Magma
+- SageMath
+- Fusion 360
+- Ansys Workbench
+
+** Tools
+- Git
+- Docker
+- Google Cloud APIs
+- Selenium
+- Discord.py
+- REST APIs

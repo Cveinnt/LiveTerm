@@ -1,0 +1,68 @@
+:PROPERTIES:
+:ID:       77df5ef7-abf4-416f-a0fa-82119ab40e66
+:END:
+#+TITLE: ADR 0001 — MiTerm Redesign: Source, Pipeline, Topology, Minimalism
+#+FILETAGS: :adr:miterm:
+
+Status: accepted (2026-07-16)
+Deciders: Mihir Talati (navigator), agent (driver)
+
+Bundled MADR-style record for the four load-bearing decisions that open the
+MiTerm redesign. Praxis references point at the canonical praxis graph
+(Emacs-Vault, refactor-v2 branch).
+
+* Context
+MiTerm (the terminal résumé site) and its GitHub Pages deployment had drifted
+into two full, diverging Next.js apps, with résumé content duplicated between
+~content.json~ (terminal) and a hand-written ~public/resume.html~ (plain page).
+CRT effects, a dead login overlay, and a per-second clock had accrued. Goal:
+return to a clean, minimal LiveTerm-like terminal usable by technical managers
+and non-technical recruiters, with a single, extensible authoring backend.
+
+* Decision 1 — Canonical résumé source: one ~resume.org~ in the site repo
+Author the résumé as a single Org file, structured as org-roam nodes (one
+~:ID:~ heading per item). It is the Single Source of Truth; ~resume.json~ is a
+generated, declared mirror consumed by both the terminal and the plain page.
+- Alternatives: org-roam nodes inside the Emacs-Vault graph (rejected now:
+  couples the public build to a private repo — deferred, see Consequences);
+  keep editing ~content.json~ (rejected: no org authoring, weak SSOT).
+- Praxis: Single Source of Truth; Homoiconicity / Text Is the System;
+  Declared Mirrors.
+
+* Decision 2 — Build pipeline: standalone Node parser, no Emacs in CI
+~scripts/org-to-json.mjs~ parses ~resume.org~ → ~resume.json~ as a prebuild
+step. Flow is one-way; a ~--check~ canary (regenerate + diff) fails CI on drift.
+- Alternatives: Emacs batch export (rejected: Emacs dependency in CI, slower);
+  manual local export (rejected: mirror silently drifts).
+- New Code Is a Liability: mature JS org parsers (~orga~, ~uniorg~) were
+  considered and rejected because the schema is small and self-owned — a
+  dependency tree would be more liability than a ~120-line contract-first
+  reader. Divergence from the consensus "use a library" default is deliberate
+  and recorded here.
+- Praxis: Contract-First Modules; Tangle Discipline; Mirrors and Canaries.
+
+* Decision 3 — Repo topology: MiTerm canonical, github.io = build output
+MiTerm holds all source (app, ~resume.org~, parser, config). The static export
+is published to ~Mihir-Null.github.io~, which serves GitHub Pages (CNAME
+nullis.me) and holds build output only.
+- Alternatives: github.io canonical, retire MiTerm (rejected: contradicts the
+  "MiTerm deploys to github.io" model); keep both apps sharing JSON (rejected:
+  maximum duplication).
+- Consequence: cross-repo publish needs a deploy token/PAT secret — tracked as
+  the one operational dependency, wired in the deploy phase.
+
+* Decision 4 — Minimalism scope
+Remove: all CRT effects (barrel-distortion generator, ~crt~ command,
+warp/curve, CRT CSS); the dead ~.login-*~ overlay CSS; the per-second age/clock
+ticker (render once, statically). Reduce ~ls~/~sumfetch~ from boxed widgets to
+flat text — tree as the default listing — while keeping hover highlighting and
+clickable elements. Keep the joke and web-search commands (low cost, personality).
+- Praxis: New Code Is a Liability (delete before adding); Atomicity.
+
+* Consequences
+- ~resume.org~ Profile is the canonical home for name/contact facts;
+  ~config.json~'s duplicate identity fields are slated for removal in the
+  wiring phase so there is one home (SSOT). Until then the overlap is a
+  declared, temporary mirror.
+- Indexing ~resume.org~ into the Emacs-Vault org-roam graph later stays open
+  via multi-directory org-roam or ~:ROAM_REFS:~ — no lock-in from Decision 1.
