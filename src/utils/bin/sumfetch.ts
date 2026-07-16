@@ -6,6 +6,7 @@ import {
   education,
   organizations,
   publications,
+  certifications,
   skills,
   catLabel,
 } from '../resume';
@@ -135,6 +136,17 @@ export const summary = async (_args: string[]): Promise<string> => {
       ...publications.map((p) => `${p.title}\n  ${p.status}`),
     ].join('\n\n'),
   );
+
+  if (certifications.length) {
+    blocks.push(
+      [
+        title('CERTIFICATIONS'),
+        ...certifications.map((c) =>
+          c.issuer ? `${c.name} — ${c.issuer}` : c.name,
+        ),
+      ].join('\n'),
+    );
+  }
 
   blocks.push(
     [

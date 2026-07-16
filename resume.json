@@ -7,16 +7,16 @@
     "email": "mihirtalati3@gmail.com",
     "phone": "(240)-351-1014",
     "citizenship": "US",
-    "bio": "Pursuing dual degrees in Computer Science and Physics at the University of Maryland. Exploring quantum computing, machine learning, and physics based simulation with an emphasis on research and development. Interested in all things science and technology. Hobbies include tinkering with unix and hardware, game development and literature."
+    "bio": "Student at UMD pursuing dual Honors degrees in Computer Science and Physics. Researcher and developer focused on quantum information, scientific machine learning, and computational physics. Also builds reproducible NixOS systems and a literate org-roam knowledge vault in Emacs. Interested in all things science and technology; hobbies include tinkering with unix and hardware, game development and literature."
   },
   "experience": [
     {
       "id": "809dd6f7-7700-43ae-ac87-ae2ec79ab4ef",
       "role": "Researcher",
       "company": "CAAR REU",
-      "dates": "Jun 2025 – Aug 2025",
+      "dates": "Jun 2025 – Present",
       "subtitle": "Combinatorics, Algorithms, and AI for Real Problems",
-      "location": "QuICS · University of Maryland",
+      "location": "Joint Center for Quantum Information and Computer Science (QuICS)",
       "tech": [
         "Python",
         "Galois",
@@ -25,9 +25,9 @@
         "SageMath"
       ],
       "bullets": [
-        "Designed novel fault-tolerant CSS quantum error-correcting codes for qudits inspired by quadratic residue codes.",
-        "Established code families with transversal Clifford and T gate support through finite field and QEC theory proofs.",
-        "Implemented parallel Python tooling to validate self-orthogonality and distance properties across large search spaces."
+        "Constructing a new family of CSS quantum error-correcting codes for qudits from classical quadratic residue codes.",
+        "Validated novel fault-tolerant QEC codes using finite field theory and parallel Python tooling on an HPC cluster.",
+        "Proved transversal Clifford and T gate support and tested self-orthogonality and distance across large search spaces."
       ]
     },
     {
@@ -68,6 +68,25 @@
     }
   ],
   "projects": [
+    {
+      "id": "78995fe0-1a41-429f-92c8-e04da5543290",
+      "name": "Nyx — Declarative System & Knowledge Infrastructure",
+      "timeline": "2024 – Present",
+      "subtitle": "Reproducible NixOS + literate org-roam vault",
+      "tech": [
+        "Nix",
+        "NixOS",
+        "Home-Manager",
+        "Emacs Lisp",
+        "Org-mode",
+        "org-roam"
+      ],
+      "bullets": [
+        "Built a modular, reproducible NixOS system (NyxOS/NyxNet/NyxSys) with declarative host, network, and service boundaries.",
+        "Designed a distributed org-roam vault — one searchable knowledge graph whose notes live inside each project repo, bound to code via ROAM_REFS.",
+        "Authored a literate Doom Emacs configuration and agent-driven tooling, codifying an engineering praxis (single source of truth, declared mirrors, atomicity) enforced by CI canaries."
+      ]
+    },
     {
       "id": "28f564fa-8ac8-4720-bf5c-cf999186cf6d",
       "name": "Quantum State Tomography via QML",
@@ -214,7 +233,7 @@
       "graduation": "May 2027",
       "subtitle": "Computer Science (Honors) · Physics (Honors)",
       "degrees": [
-        "B.S. Computer Science (Honors)",
+        "B.S. Computer Science (Honors — Quantum Information track)",
         "B.S. Physics (Honors)"
       ],
       "honors": [
@@ -223,7 +242,7 @@
         "Dean's List — Every Semester"
       ],
       "coursework": [
-        "Graduate Quantum Computing (CMSC657)",
+        "Graduate Quantum Information (CMSC657)",
         "Computer Science Honors Seminar",
         "Differentiable Programming for Agentic AI (CMSC498Z)",
         "Natural Language Processing (CMSC470)",
@@ -233,7 +252,9 @@
         "Applied Probability & Statistics (STAT400)",
         "Honors Advanced Modern Physics (PHYS400)",
         "Quantum Mechanics II (PHYS402)",
+        "Accelerator Simulation",
         "Multivariate Calculus",
+        "Linear Algebra",
         "Differential Equations"
       ]
     }
@@ -241,10 +262,11 @@
   "organizations": [
     {
       "id": "9ed6f6b0-5389-485f-aa00-e6c934737e3d",
-      "role": "Industry Chair",
+      "role": "Vice President",
       "org": "Quantum Coalition",
       "dates": "Jan 2024 – Present",
       "bullets": [
+        "Promoted to Vice President after serving as Industry Chair (Jan 2024 – Aug 2025).",
         "Co-organized the QRISE research competition with 200+ international participants.",
         "Partnered with the UN and ITU to deliver the QC-FLIQ hackathon for the International Year of Quantum (500+ attendees)."
       ]
@@ -261,7 +283,7 @@
     },
     {
       "id": "145dbb0c-cf88-46e0-bc3e-052120e83978",
-      "role": "Co-President",
+      "role": "Co-Founder",
       "org": "ACM@UMD",
       "dates": "Sep 2023 – Present",
       "bullets": [
@@ -274,7 +296,7 @@
     {
       "id": "0f86c17a-6165-4b78-9610-5d6cb3da2977",
       "title": "Quantum state reconstruction with variational quantum circuit",
-      "status": "Preprint — arXiv:2507.01246",
+      "status": "Accepted — Quantum Machine Intelligence (2025); arXiv:2507.01246",
       "bullets": [
         "Introduces a quantum machine learning approach to tomography for high-dimensional states.",
         "Benchmarks loss landscapes, embedding strategies, and optimizer behavior across noise models.",
@@ -291,13 +313,30 @@
       ]
     }
   ],
+  "certifications": [
+    {
+      "id": "c468c5d7-e4e3-4589-a00a-1f40932f3ea4",
+      "name": "Qiskit (v0.2x)",
+      "issuer": "IBM"
+    }
+  ],
   "skills": {
     "languages": [
       "Python",
+      "Go",
       "C",
       "C++",
+      "C#",
       "JavaScript/TypeScript",
-      "Rust (learning)"
+      "Java",
+      "Rust",
+      "MATLAB",
+      "SQL",
+      "Verilog",
+      "R",
+      "Bash",
+      "Nix",
+      "Emacs Lisp"
     ],
     "quantum": [
       "Qiskit",
@@ -308,10 +347,13 @@
     ],
     "ml": [
       "PyTorch",
-      "TensorFlow Quantum",
+      "TensorFlow",
       "NumPy",
       "SciPy",
       "scikit-learn",
+      "Pandas",
+      "SageMath",
+      "OpenCV",
       "MPI",
       "Numba"
     ],
@@ -319,17 +361,22 @@
       "MAD-X",
       "Elegant",
       "Magma",
-      "SageMath",
       "Fusion 360",
-      "Ansys Workbench"
+      "Ansys Workbench",
+      "CFD"
     ],
     "tools": [
       "Git",
+      "Linux / Unix",
       "Docker",
-      "Google Cloud APIs",
+      "NixOS",
+      "Home-Manager",
+      "Emacs / org-roam",
+      "GCP",
+      "Neo4j",
+      "HPC",
       "Selenium",
-      "Discord.py",
-      "REST APIs"
+      "Arduino"
     ]
   }
 }

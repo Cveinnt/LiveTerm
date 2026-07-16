@@ -57,6 +57,11 @@ const SECTIONS = {
     list: true,
   },
   publications: { kind: 'items', fields: ['title', 'status'], list: true },
+  certifications: {
+    kind: 'items',
+    fields: ['name', 'issuer', 'date'],
+    list: false,
+  },
   skills: { kind: 'skills' },
 };
 
@@ -110,6 +115,7 @@ function parse(text) {
     education: [],
     organizations: [],
     publications: [],
+    certifications: [],
     skills: {},
   };
   const bioLines = [];
@@ -199,6 +205,7 @@ function serialize(data) {
     education: data.education,
     organizations: data.organizations,
     publications: data.publications,
+    certifications: data.certifications,
     skills: data.skills,
   };
   return JSON.stringify(ordered, null, 2) + '\n';

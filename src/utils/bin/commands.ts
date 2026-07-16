@@ -6,6 +6,7 @@ import {
   education,
   organizations,
   publications,
+  certifications,
   skills,
   catLabel,
 } from '../resume';
@@ -26,7 +27,7 @@ export const help = async (_args: string[]): Promise<string> => {
     ['about', 'short bio'],
     [
       'ls [section]',
-      'browse résumé — experience projects education skills organizations publications',
+      'browse résumé — experience projects education skills organizations publications certifications',
     ],
     ['summary', 'full text profile'],
     ['sumfetch', 'profile card'],
@@ -58,6 +59,7 @@ const SECTIONS = [
   ['education', 'degrees & coursework'],
   ['organizations', 'leadership roles'],
   ['publications', 'papers & writing'],
+  ['certifications', 'credentials'],
   ['skills', 'technical stack'],
 ] as const;
 
@@ -134,6 +136,11 @@ export const ls = async (args: string[]): Promise<string> => {
               .join('\n')}`,
         )
         .join('\n\n');
+
+    case 'certifications':
+      return certifications
+        .map((c) => (c.issuer ? `${c.name} — ${c.issuer}` : c.name))
+        .join('\n');
 
     case 'skills':
       return Object.entries(skills)

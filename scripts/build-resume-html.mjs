@@ -89,6 +89,7 @@ function render(data) {
     projects,
     organizations,
     publications,
+    certifications = [],
     education,
   } = data;
   const edu = education[0] || {};
@@ -202,14 +203,33 @@ function render(data) {
     `      <div class="courses-card">\n        <div class="courses-grid" id="courses-grid">\n${pills}\n        </div>\n      </div>`,
   );
 
+  const certsSection = certifications.length
+    ? section(
+        'certifications',
+        'Certifications',
+        `      <div class="courses-card">\n        <div class="courses-grid" id="certs-grid">\n${certifications
+          .map((c) => {
+            const label = c.issuer ? `${c.name} · ${c.issuer}` : c.name;
+            return `          <span class="course-pill" data-search="${searchKey(
+              c.name,
+              c.issuer,
+            )}">${esc(label)}</span>`;
+          })
+          .join('\n')}\n        </div>\n      </div>`,
+      )
+    : '';
+
   const sections = [
     educationSection,
     experienceSection,
     projectsSection,
     orgsSection,
     pubsSection,
+    certsSection,
     coursesSection,
-  ].join('\n\n');
+  ]
+    .filter(Boolean)
+    .join('\n\n');
 
   const headerSub = `Dual Degree · ${(edu.degrees || []).join(' & ')} · GPA ${
     edu.gpa

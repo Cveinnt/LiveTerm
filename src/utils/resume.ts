@@ -53,6 +53,12 @@ export type Publication = {
   status: string;
   bullets: string[];
 };
+export type Certification = {
+  id?: string;
+  name: string;
+  issuer?: string;
+  date?: string;
+};
 export type Skills = Record<string, string[]>;
 
 export const profile = resume.profile as Profile;
@@ -61,6 +67,7 @@ export const projects = resume.projects as Project[];
 export const education = resume.education as Education[];
 export const organizations = resume.organizations as Organization[];
 export const publications = resume.publications as Publication[];
+export const certifications = resume.certifications as Certification[];
 export const skills = resume.skills as Skills;
 
 // Display label for a skills category key: acronyms (<=2 chars) upper-cased

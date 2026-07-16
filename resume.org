@@ -38,11 +38,12 @@
 :PHONE:    (240)-351-1014
 :CITIZENSHIP: US
 :END:
-Pursuing dual degrees in Computer Science and Physics at the University of
-Maryland. Exploring quantum computing, machine learning, and physics based
-simulation with an emphasis on research and development. Interested in all
-things science and technology. Hobbies include tinkering with unix and
-hardware, game development and literature.
+Student at UMD pursuing dual Honors degrees in Computer Science and Physics.
+Researcher and developer focused on quantum information, scientific machine
+learning, and computational physics. Also builds reproducible NixOS systems and
+a literate org-roam knowledge vault in Emacs. Interested in all things science
+and technology; hobbies include tinkering with unix and hardware, game
+development and literature.
 
 * Experience
 ** Researcher — CAAR REU (QuICS)
@@ -51,17 +52,17 @@ hardware, game development and literature.
 :ROLE:     Researcher
 :COMPANY:  CAAR REU
 :SUBTITLE: Combinatorics, Algorithms, and AI for Real Problems
-:LOCATION: QuICS · University of Maryland
-:DATES:    Jun 2025 – Aug 2025
+:LOCATION: Joint Center for Quantum Information and Computer Science (QuICS)
+:DATES:    Jun 2025 – Present
 :END:
 - tech :: Python
 - tech :: Galois
 - tech :: NumPy
 - tech :: Magma Math
 - tech :: SageMath
-- Designed novel fault-tolerant CSS quantum error-correcting codes for qudits inspired by quadratic residue codes.
-- Established code families with transversal Clifford and T gate support through finite field and QEC theory proofs.
-- Implemented parallel Python tooling to validate self-orthogonality and distance properties across large search spaces.
+- Constructing a new family of CSS quantum error-correcting codes for qudits from classical quadratic residue codes.
+- Validated novel fault-tolerant QEC codes using finite field theory and parallel Python tooling on an HPC cluster.
+- Proved transversal Clifford and T gate support and tested self-orthogonality and distance across large search spaces.
 
 ** Undergraduate Researcher — Bright Beams Collective (IREAP)
 :PROPERTIES:
@@ -96,6 +97,23 @@ hardware, game development and literature.
 - Integrated Google Workspace APIs to manage templates, customer data, and error handling workflows.
 
 * Projects
+** Nyx — Declarative System & Knowledge Infrastructure
+:PROPERTIES:
+:ID:       78995fe0-1a41-429f-92c8-e04da5543290
+:NAME:     Nyx — Declarative System & Knowledge Infrastructure
+:SUBTITLE: Reproducible NixOS + literate org-roam vault
+:TIMELINE: 2024 – Present
+:END:
+- tech :: Nix
+- tech :: NixOS
+- tech :: Home-Manager
+- tech :: Emacs Lisp
+- tech :: Org-mode
+- tech :: org-roam
+- Built a modular, reproducible NixOS system (NyxOS/NyxNet/NyxSys) with declarative host, network, and service boundaries.
+- Designed a distributed org-roam vault — one searchable knowledge graph whose notes live inside each project repo, bound to code via ROAM_REFS.
+- Authored a literate Doom Emacs configuration and agent-driven tooling, codifying an engineering praxis (single source of truth, declared mirrors, atomicity) enforced by CI canaries.
+
 ** Quantum State Tomography via QML
 :PROPERTIES:
 :ID:       28f564fa-8ac8-4720-bf5c-cf999186cf6d
@@ -226,12 +244,12 @@ hardware, game development and literature.
 :GPA:      3.974
 :GRADUATION: May 2027
 :END:
-- degree :: B.S. Computer Science (Honors)
+- degree :: B.S. Computer Science (Honors — Quantum Information track)
 - degree :: B.S. Physics (Honors)
 - honor :: Angelo Bardasis Scholarship — Physics
 - honor :: John D. Gannon Scholarship — Computer Science
 - honor :: Dean's List — Every Semester
-- course :: Graduate Quantum Computing (CMSC657)
+- course :: Graduate Quantum Information (CMSC657)
 - course :: Computer Science Honors Seminar
 - course :: Differentiable Programming for Agentic AI (CMSC498Z)
 - course :: Natural Language Processing (CMSC470)
@@ -241,17 +259,20 @@ hardware, game development and literature.
 - course :: Applied Probability & Statistics (STAT400)
 - course :: Honors Advanced Modern Physics (PHYS400)
 - course :: Quantum Mechanics II (PHYS402)
+- course :: Accelerator Simulation
 - course :: Multivariate Calculus
+- course :: Linear Algebra
 - course :: Differential Equations
 
 * Organizations
-** Industry Chair — Quantum Coalition
+** Vice President — Quantum Coalition
 :PROPERTIES:
 :ID:       9ed6f6b0-5389-485f-aa00-e6c934737e3d
-:ROLE:     Industry Chair
+:ROLE:     Vice President
 :ORG:      Quantum Coalition
 :DATES:    Jan 2024 – Present
 :END:
+- Promoted to Vice President after serving as Industry Chair (Jan 2024 – Aug 2025).
 - Co-organized the QRISE research competition with 200+ international participants.
 - Partnered with the UN and ITU to deliver the QC-FLIQ hackathon for the International Year of Quantum (500+ attendees).
 
@@ -265,10 +286,10 @@ hardware, game development and literature.
 - Led organizational strategy, programming, and outreach after serving as an officer since 2020.
 - Produced the Quantum Leap Career Nexus with 240+ attendees and partners including IBM, Microsoft, and IonQ.
 
-** Co-President — ACM@UMD
+** Co-Founder — ACM@UMD
 :PROPERTIES:
 :ID:       145dbb0c-cf88-46e0-bc3e-052120e83978
-:ROLE:     Co-President
+:ROLE:     Co-Founder
 :ORG:      ACM@UMD
 :DATES:    Sep 2023 – Present
 :END:
@@ -280,7 +301,7 @@ hardware, game development and literature.
 :PROPERTIES:
 :ID:       0f86c17a-6165-4b78-9610-5d6cb3da2977
 :TITLE:    Quantum state reconstruction with variational quantum circuit
-:STATUS:   Preprint — arXiv:2507.01246
+:STATUS:   Accepted — Quantum Machine Intelligence (2025); arXiv:2507.01246
 :END:
 - Introduces a quantum machine learning approach to tomography for high-dimensional states.
 - Benchmarks loss landscapes, embedding strategies, and optimizer behavior across noise models.
@@ -298,10 +319,20 @@ hardware, game development and literature.
 * Skills
 ** Languages
 - Python
+- Go
 - C
 - C++
+- C#
 - JavaScript/TypeScript
-- Rust (learning)
+- Java
+- Rust
+- MATLAB
+- SQL
+- Verilog
+- R
+- Bash
+- Nix
+- Emacs Lisp
 
 ** Quantum
 - Qiskit
@@ -312,10 +343,13 @@ hardware, game development and literature.
 
 ** ML
 - PyTorch
-- TensorFlow Quantum
+- TensorFlow
 - NumPy
 - SciPy
 - scikit-learn
+- Pandas
+- SageMath
+- OpenCV
 - MPI
 - Numba
 
@@ -323,14 +357,27 @@ hardware, game development and literature.
 - MAD-X
 - Elegant
 - Magma
-- SageMath
 - Fusion 360
 - Ansys Workbench
+- CFD
 
 ** Tools
 - Git
+- Linux / Unix
 - Docker
-- Google Cloud APIs
+- NixOS
+- Home-Manager
+- Emacs / org-roam
+- GCP
+- Neo4j
+- HPC
 - Selenium
-- Discord.py
-- REST APIs
+- Arduino
+
+* Certifications
+** Qiskit (v0.2x) — IBM
+:PROPERTIES:
+:ID:       c468c5d7-e4e3-4589-a00a-1f40932f3ea4
+:NAME:     Qiskit (v0.2x)
+:ISSUER:   IBM
+:END:
