@@ -13,6 +13,8 @@ LiveTerm can be used to build a variety of websites:
 
 Feel free to play with the web demo above!
 
+Created by [Vincent Wu (Wensen Wu)](https://www.wensenwu.com/).
+
 ## 📸 Showcase
 
 <p align="center">
